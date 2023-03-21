@@ -6,7 +6,7 @@
   // Connexion à la base de données
   $host = "localhost"; // Hôte de la base de données
   $user = "root"; // Nom d'utilisateur de la base de données
-  $password = "motdepassemysql"; // Mot de passe de la base de données
+  $password = ""; // Mot de passe de la base de données
   $dbname = "base_de_donnee_site_recrutement"; // Nom de la base de données
 
   // Connexion à la base de données

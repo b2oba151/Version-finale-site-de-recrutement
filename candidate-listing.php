@@ -90,8 +90,6 @@
                 <a href="#">Emplois</a>
                 <ul class="dropdown">
                   <li><a href="job-listing.php">Liste des emplois</a></li>
-                  <li><a href="job-grid.html">Grille d'emploi</a></li>
-                  <li><a href="job-grid.html">Barre latérale de la grille des tâches</a></li>
                   <li><a href="job-detail.php">Détail de l'emploi</a></li>
                 </ul>
               </li>

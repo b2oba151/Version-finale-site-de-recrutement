@@ -4,7 +4,7 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $servername = "localhost";
     $username = "root";
-    $password = "motdepassemysql";
+    $password = "";
     $dbname = "base_de_donnee_site_recrutement";
 
     $bdd = new mysqli($servername, $username, $password, $dbname);

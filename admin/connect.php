@@ -1,7 +1,7 @@
 <?php
 host$='localhost';
 $user='root';
-$mdp='motdepassemysql';
+$mdp='';
 $db='base_de_donnee_site_recrutement';
 ?>
 

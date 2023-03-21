@@ -179,7 +179,7 @@
 function getOffresEmploi() {
   $servername = "localhost";
   $username = "root";
-  $password = "motdepassemysql";
+  $password = "";
   $dbname = "base_de_donnee_site_recrutement";
 
   // Connexion à la base de données
