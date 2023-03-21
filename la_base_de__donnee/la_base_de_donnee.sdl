@@ -1,0 +1,211 @@
+ 
+
+Table "base_de_donnee_site_recrutement"."profils" {
+  "id" INT [pk, not null, increment]
+  "nom" VARCHAR(50) [not null]
+  "description" VARCHAR(255) [default: NULL]
+
+Indexes {
+  id [unique, name: "id_UNIQUE"]
+}
+}
+
+Table "base_de_donnee_site_recrutement"."candidats" {
+  "id" INT [pk, not null, increment]
+  "nom" VARCHAR(255) [not null]
+  "prenom" VARCHAR(255) [not null]
+  "email" VARCHAR(255) [not null]
+  "telephone" VARCHAR(20) [not null]
+  "mot_de_passe" VARCHAR(255) [not null]
+  "adresse" VARCHAR(255) [not null]
+  "code_postal" VARCHAR(10) [not null]
+  "ville" VARCHAR(255) [not null]
+  "pays" VARCHAR(255) [not null]
+
+Indexes {
+  email [unique, name: "index2"]
+  (nom, prenom) [name: "index3"]
+  id [unique, name: "id_UNIQUE"]
+}
+}
+
+Table "base_de_donnee_site_recrutement"."recruteurs" {
+  "id" INT [pk, not null, increment]
+  "nom_entreprise" VARCHAR(255) [not null]
+  "email" VARCHAR(255) [not null]
+  "mot_de_passe" VARCHAR(255) [not null]
+  "adresse" VARCHAR(255) [not null]
+  "code_postal" VARCHAR(10) [not null]
+  "ville" VARCHAR(255) [not null]
+  "pays" VARCHAR(255) [not null]
+
+Indexes {
+  email [unique, name: "index2"]
+  (nom_entreprise, adresse, mot_de_passe, ville) [name: "index3"]
+}
+}
+
+Table "base_de_donnee_site_recrutement"."utilisateurs" {
+  "id" INT [pk, not null, increment]
+  "email" VARCHAR(255) [not null]
+  "mot_de_passe" VARCHAR(255) [not null]
+  "profil_id" INT [not null]
+  "type" VARCHAR(45) [not null]
+  "id_candidat_ou_recruteur" INT [default: NULL]
+
+Indexes {
+  profil_id [name: "a"]
+  id_candidat_ou_recruteur [name: "fk_utilisateurs_1_idx"]
+  (email, mot_de_passe) [name: "index4"]
+  id [unique, name: "id_UNIQUE"]
+}
+}
+
+Table "base_de_donnee_site_recrutement"."offres_emploi" {
+  "id" INT [pk, not null, increment]
+  "id_recruteur" INT [not null]
+  "titre" VARCHAR(255) [not null]
+  "description" TEXT [not null]
+  "date_publication" DATE [not null]
+  "date_limite" DATE [not null]
+  "ville_offre" VARCHAR(255) [not null]
+  "salaire" DECIMAL(10,2) [default: NULL]
+  "email_recruteur" VARCHAR(45) [default: NULL]
+  "type_travail" VARCHAR(45) [default: NULL]
+  "experience" VARCHAR(45) [default: NULL]
+  "niveau_etude" VARCHAR(45) [default: NULL]
+  "nom_industrie" VARCHAR(45) [default: NULL]
+  "categorie_travail" VARCHAR(45) [default: NULL]
+  "images" VARCHAR(45) [default: NULL]
+  "nom_societe" VARCHAR(45) [default: NULL]
+  "site_internet" VARCHAR(45) [default: NULL]
+  "numero_telephone" VARCHAR(45) [default: NULL]
+  "email_entreprise" VARCHAR(45) [default: NULL]
+  "adresse_entreprise" VARCHAR(45) [default: NULL]
+
+Indexes {
+  id_recruteur [name: "fk_offres-emploi_recruteurs"]
+  (date_publication, date_limite, ville_offre, salaire, titre) [name: "index3"]
+  id [unique, name: "id_UNIQUE"]
+}
+}
+
+Table "base_de_donnee_site_recrutement"."postulations" {
+  "id" INT [pk, not null, increment]
+  "id_offre" INT [not null]
+  "id_candidat" INT [not null]
+  "date_postulation" DATE [not null]
+  "lettre_motivation" TEXT [default: NULL]
+
+Indexes {
+  id_offre [name: "fk_postulations_offres_emploi"]
+  id_candidat [name: "fk_postulations_candidats"]
+  id [unique, name: "id_UNIQUE"]
+}
+}
+
+Table "base_de_donnee_site_recrutement"."cv" {
+  "id" INT [pk, not null, increment]
+  "id_candidat" INT [not null]
+  "titre_profession" VARCHAR(255) [not null]
+  "description" TEXT [not null]
+  "fichier_cv" VARCHAR(255) [not null]
+  "date_creation" DATE [not null]
+  "age" VARCHAR(45) [default: NULL]
+  "ville" VARCHAR(45) [default: NULL]
+  "sexe" VARCHAR(45) [default: NULL]
+  "type_travail" VARCHAR(45) [default: NULL]
+  "experience" VARCHAR(45) [default: NULL]
+  "image" VARCHAR(45) [default: NULL]
+
+Indexes {
+  id_candidat [name: "fk_cv_candidats"]
+  id [unique, name: "id_UNIQUE"]
+}
+}
+
+Table "base_de_donnee_site_recrutement"."competences" {
+  "id" INT [pk, not null, increment]
+  "titre" VARCHAR(255) [not null]
+  "description" TEXT [default: NULL]
+}
+
+Table "base_de_donnee_site_recrutement"."candidats_competences" {
+  "id_candidat" INT [not null]
+  "id_competence" INT [not null]
+  "niveau" INT [not null]
+
+Indexes {
+  id_competence
+  (id_candidat, id_competence) [pk]
+}
+}
+
+Table "base_de_donnee_site_recrutement"."offres_emploi_competences" {
+  "id_offre" INT [not null]
+  "id_competence" INT [not null]
+
+Indexes {
+  id_competence [name: "fk_off-emp-comp_comp"]
+  (id_offre, id_competence) [pk]
+}
+}
+
+Table "base_de_donnee_site_recrutement"."formations" {
+  "id" INT [pk, not null, increment]
+  "id_cv" INT [not null]
+  "nom_etablissement" VARCHAR(45) [default: NULL]
+  "description_bref" VARCHAR(45) [default: NULL]
+  "date_debut" DATE [default: NULL]
+  "date_fin" DATE [default: NULL]
+  "diplome" VARCHAR(45) [default: NULL]
+
+Indexes {
+  id_cv [name: "fk_formations_1_idx"]
+  (nom_etablissement, date_debut, date_fin, diplome) [name: "index3"]
+  id [unique, name: "id_UNIQUE"]
+}
+}
+
+Table "base_de_donnee_site_recrutement"."experiances" {
+  "id" INT [pk, not null, increment]
+  "id_cv" INT [not null]
+  "nom_societe" VARCHAR(45) [default: NULL]
+  "poste" VARCHAR(45) [default: NULL]
+  "nom_employeur" VARCHAR(45) [default: NULL]
+  "description_bref" VARCHAR(45) [default: NULL]
+  "date_debut" DATE [default: NULL]
+  "date_fin" DATE [default: NULL]
+
+Indexes {
+  id_cv [name: "fk_experiances_1_idx"]
+  (nom_societe, poste, date_fin) [name: "index3"]
+  id [unique, name: "id_UNIQUE"]
+}
+}
+
+Ref "fk_utilisateurs_avec_profils":"base_de_donnee_site_recrutement"."profils"."id" < "base_de_donnee_site_recrutement"."utilisateurs"."profil_id" [update: restrict, delete: restrict]
+
+Ref "fk_utilisateurs_avec_cand":"base_de_donnee_site_recrutement"."candidats"."id" < "base_de_donnee_site_recrutement"."utilisateurs"."id_candidat_ou_recruteur" [update: no action, delete: no action]
+
+Ref "fk_utilisateurs_avec_recr":"base_de_donnee_site_recrutement"."recruteurs"."id" < "base_de_donnee_site_recrutement"."utilisateurs"."id_candidat_ou_recruteur" [update: no action, delete: no action]
+
+Ref "fk_offres-emploi_recruteurs":"base_de_donnee_site_recrutement"."recruteurs"."id" < "base_de_donnee_site_recrutement"."offres_emploi"."id_recruteur" [update: cascade, delete: cascade]
+
+Ref "fk_postulations_offres_emploi":"base_de_donnee_site_recrutement"."offres_emploi"."id" < "base_de_donnee_site_recrutement"."postulations"."id_offre" [update: cascade, delete: cascade]
+
+Ref "fk_postulations_candidats":"base_de_donnee_site_recrutement"."candidats"."id" < "base_de_donnee_site_recrutement"."postulations"."id_candidat" [update: cascade, delete: cascade]
+
+Ref "fk_cv_candidats":"base_de_donnee_site_recrutement"."candidats"."id" < "base_de_donnee_site_recrutement"."cv"."id_candidat" [update: cascade, delete: cascade]
+
+Ref "fk_candidat-competance_candidats":"base_de_donnee_site_recrutement"."candidats"."id" < "base_de_donnee_site_recrutement"."candidats_competences"."id_candidat" [update: cascade, delete: cascade]
+
+Ref "fk_candidat-competance_competances":"base_de_donnee_site_recrutement"."competences"."id" < "base_de_donnee_site_recrutement"."candidats_competences"."id_competence" [update: cascade, delete: cascade]
+
+Ref "fk_off-emp-comp_offr-emp":"base_de_donnee_site_recrutement"."offres_emploi"."id" < "base_de_donnee_site_recrutement"."offres_emploi_competences"."id_offre" [update: cascade, delete: cascade]
+
+Ref "fk_off-emp-comp_comp":"base_de_donnee_site_recrutement"."competences"."id" < "base_de_donnee_site_recrutement"."offres_emploi_competences"."id_competence" [update: cascade, delete: cascade]
+
+Ref "fk_formations_cv":"base_de_donnee_site_recrutement"."cv"."id" < "base_de_donnee_site_recrutement"."formations"."id_cv" [update: no action, delete: no action]
+
+Ref "fk_experiances_cv":"base_de_donnee_site_recrutement"."cv"."id" < "base_de_donnee_site_recrutement"."experiances"."id_cv" [update: no action, delete: no action]
