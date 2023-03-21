@@ -1,0 +1,94 @@
+/* Jobset - Job Board HTML Template */
+@media only screen and (max-width: 1400px){
+	.side-content-visible .page-wrapper{
+		padding-left: 0;
+	}
+
+	.side-content-visible .main-header .main-box{
+		margin-left: 0;
+	}
+}
+
+@media only screen and (max-width: 1023px){
+	.main-header .main-box{
+		padding: 0 15px;
+	}
+
+	.dashboard-content{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+}
+
+@media only screen and (max-width: 767px){
+
+	.dashboard-header .breadcrumb-nav{
+		float: left;
+		margin-top: 20px;
+	}
+
+	.messages-box,
+	.comments-tab,
+	.manage-candidates{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+@media only screen and (max-width: 599px){
+
+	.main-header .upper-right .option-box{
+		display: none;
+	}
+
+	.message-box{
+		padding-left: 0;
+	}
+
+	.message-box .thumb-box{
+		position: relative;
+	}
+
+}
+
+
+@media only screen and (max-width: 479px){
+
+	.hidden-bar{
+		max-width: 100%;
+		left: -100%;
+		border-radius: 0;
+	}
+
+	.manage-candidates .order-num,
+	.message-box .booking-info li{
+		margin-bottom: 10px;
+	}
+
+	.manage-candidates .order-num,
+	.property-block .option-box,
+	.message-box .booking-info li strong{
+		width: 100%;
+	}
+
+	.hidden-bar .cross-icon{
+		top: 5px;
+		right: 10px;
+	}
+
+	.comments-tab .tab-buttons{
+		float: left;
+		width: 100%;
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+
+	.comments-tab h3{
+		padding: 0;
+	}
+
+	.table{
+		min-width: 480px;
+	}
+}

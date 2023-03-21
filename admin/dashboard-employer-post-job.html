@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Projet_3 - Dashboard Employer Post Job</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Stylesheets -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="../css/custom-bs.css">
+	<link rel="stylesheet" href="../css/bootstrap-select.min.css">
+	<link rel="stylesheet" href="../fonts/icomoon/style.css">
+	<link rel="stylesheet" href="../fonts/line-icons/style.css">
+	<link rel="stylesheet" href="../css/animate.min.css">
+	<link rel="stylesheet" href="../css/quill.snow.css">
+
+
+	<!-- MAIN CSS -->
+	<link href="css/style.css" rel="stylesheet">
+
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+	<button id="back-to-top-btn"> <span class="icon-keyboard_arrow_up"></span></button>
+
+	<div class="site-wrap">
+
+		<!-- Main Header-->
+		<header class="main-header">
+			<div class="main-box clearfix">
+				<!-- Logo Box -->
+				<div class="logo-box">
+					<div class="logo"><a href="../index-2.html"><img src="images/l" alt="" title=""></a></div>
+				</div>
+
+				<!-- Upper Right-->
+				<div class="upper-right">
+					<ul class="clearfix">
+						<li class="dropdown option-box">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="images/resource/thumb-1.jpg" alt="avatar" class="thumb">Welcom, John</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="dashboard-employer.php">Dashboard</a>
+								<a class="dropdown-item" href="dashboard-employer-my-profile.html">My profile</a>
+								<a class="dropdown-item" href="../index-2.html">Log out</a>
+							</div>
+						</li>
+						
+						<li class="nav-toggler">
+							<button class="toggler-btn nav-btn"><span class="bar bar-one"></span><span class="bar bar-two"></span><span class="bar bar-three"></span></button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--End Header Lower-->
+		</header>
+		<!--End Main Header -->
+
+		<!-- Hidden Bar -->
+		<section class="hidden-bar">
+			<div class="dashboard-inner">
+				<div class="cross-icon"><span class="pe-7s-close-circle"></span></div>
+				<ul class="navigation">
+					<li><a href="dashboard-employer.php"><i class="pe-7s-culture"></i> Dashboard</a></li>
+					<li><a href="dashboard-employer-my-profile.html"><i class="pe-7s-user"></i>My Profile</a></li>
+					<li><a href="dashboard-employer-manage-Candidats.html"><i class="pe-7s-note2"></i>Manage Candidats</a></li>
+					<li><a href="dashboard-employer-manage-jobs.html"><i class="pe-7s-note2"></i>Manage Jobs</a></li>
+					<li class="active"><a href="dashboard-employer-post-job.php"><i class="pe-7s-up-arrow"></i>Post a Job</a></li>
+					<li><a href="../index-2.html"><i class="pe-7s-back-2"></i>Logout</a></li>
+				</ul>
+			</div>
+		</section>
+		<!--End Hidden Bar -->
+
+		<div class="dashboard">
+			<div class="container-fluid">
+				<div class="content-area">
+					<div class="dashboard-content">
+						<div class="dashboard-header clearfix">
+							<div class="row">
+								<div class="col-md-6 col-sm-12"><h4>Post a Job</h4></div>
+								<div class="col-md-6 col-sm-12">
+									<div class="breadcrumb-nav">
+										<ul>
+											<li><a href="../index-3.php">Index</a></li>
+											<li><a href="dashboard-employer.php">Dashboard</a></li>
+											<li class="active">Post a Job</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row mb-5">
+							<div class="col-lg-12">
+								<form class="p-4 p-md-5 border rounded" method="post">
+									<h3 class="text-black mb-5 border-bottom pb-2">General Information</h3>
+
+									<div class="row">
+										<div class="col-md-4">
+											<div class="form-group">
+												<label for="job-title">Job Title</label>
+												<input type="text" class="form-control" id="job-title" placeholder="Enter Job Title">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-group">
+												<label for="email">Email</label>
+												<input type="text" class="form-control" id="email" placeholder="you@yourdomain.com" required="">
+											</div>
+										</div>
+										<div class="col-md-4">
+
+											<div class="form-group">
+												<label for="job-type">Job Type</label>
+												<select class="selectpicker border" id="job-type" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type">
+													<option>Part Time</option>
+													<option>Full Time</option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+
+										<div class="col-md-4">
+											<div class="form-group">
+												<label for="job-location">Location</label>
+												<input type="text" class="form-control" id="job-location" placeholder="e.g. New York">
+											</div>
+										</div>
+										<div class="col-md-4">
+
+											<div class="form-group">
+												<label for="experience">Experience</label>
+												<select class="selectpicker border" id="experience" data-style="btn-black" data-width="100%" data-live-search="true" title="Choose Experience">
+													<option>No Experience</option>
+													<option>Less than 1 Year</option>
+													<option>2 Years</option>
+													<option>3 Years</option>
+													<option>4 Years</option>
+													<option>5+ Years</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-4">
+
+											<div class="form-group">
+												<label for="qualification">Qualification</label>
+												<select class="selectpicker border" id="qualification" data-style="btn-black" data-width="100%" data-live-search="true" title="Choose Qualification">
+													<option>Matriculation</option>
+													<option>Diploma</option>
+													<option>Intermediate</option>
+													<option>Graduate</option>
+													<option>Master's Degree</option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4">
+
+											<div class="form-group">
+												<label for="Industry">Industry</label>
+												<select class="selectpicker border" id="Industry" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Industry">
+													<option>Industry1</option>
+													<option>Industry2</option>
+													<option>Industry3</option>
+													<option>Industry4</option>
+													<option>Industr5</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-md-4">
+											
+											<div class="form-group">
+												<label for="offered-salary">Offered Salary</label>
+												<select class="selectpicker border" id="offered-salary" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Salary">
+													<option>10k - 20k</option>
+													<option>20k - 30k</option>
+													<option>30k - 40k</option>
+													<option>40k - 50k</option>
+													<option>50k - 60k</option>
+												</select>
+
+											</div>
+										</div>
+
+										<div class="col-md-4">
+											<div class="form-group">
+												<label for="job-category">Job Category</label>
+												<select class="selectpicker border" id="job-category" data-style="btn-black" data-width="100%" data-live-search="true" title="Choose a Category">
+													<option>Web Design</option>
+													<option>Web Development</option>
+													<option>Marketing</option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="form-group">
+										<label for="company-website-tw d-block">Upload Featured Image</label> <br>
+										<input type="file" id="myfile" name="myfile">
+									</div>
+
+
+									<div class="form-group">
+										<label for="job-description">Job Description</label>
+										<div class="editor" id="editor-1"></div>
+									</div>
+
+
+									<h3 class="text-black my-5 border-bottom pb-2">Company Details</h3>
+
+									<div class="row">
+										<div class="col-lg-4 col-md-4">
+											<div class="form-group">
+												<label for="company-name">Company Name</label>
+												<input type="text" class="form-control" id="company-name" placeholder="Company Name">
+											</div>
+										</div>
+
+										<div class="col-lg-4 col-md-4">
+
+											<div class="form-group">
+												<label for="company-website">Website (Optional)</label>
+												<input type="text" class="form-control" id="company-website" placeholder="https:///">
+											</div>
+										</div>
+
+										<div class="col-lg-4 col-md-4">
+											<div class="form-group">
+												<label for="company-tagline">Email Address</label>
+												<input type="text" class="form-control" id="email-address" placeholder="Email">
+											</div>
+										</div>
+
+									</div>
+
+									<div class="row">
+
+										<div class="col-lg-4 col-md-4">
+											<div class="form-group">
+												<label for="phone-number">Phone Number</label>
+												<input type="text" class="form-control" id="phone-number" placeholder="Phone Number">
+											</div>
+										</div>
+										<div class="col-lg-4 col-md-4">
+											<div class="form-group">
+												<label for="location">Location</label>
+												<select class="selectpicker border" id="location" data-style="btn-black" data-width="100%" data-live-search="true" title="Location">
+													<option>Anywhere</option>
+													<option>San Francisco</option>
+													<option>Palo Alto</option>
+													<option>New York</option>
+													<option>Manhattan</option>
+													<option>Ontario</option>
+													<option>Toronto</option>
+													<option>Kansas</option>
+													<option>Mountain View</option>
+												</select>
+
+											</div>
+										</div>
+										<div class="col-lg-4 col-md-4">
+											<div class="form-group">
+												<label for="city">City</label>
+												<input type="text" class="form-control" id="city" placeholder="Enter City Name">
+											</div>
+										</div>
+									</div>
+
+
+									<div class="row">
+
+										<div class="col-lg-4 col-md-4">
+											<div class="form-group">
+												<label for="map">Find On Map</label>
+												<input type="text" class="form-control" id="map" placeholder="1076 Sample St. Awesome View, San Francisco, California, USA">
+											</div>
+										</div>
+										<div class="col-lg-4 col-md-4">
+											<div class="form-group">
+												<label for="latitude">Latitude</label>
+												<input type="text" class="form-control" id="latitude" placeholder="55.1590600">
+											</div>
+										</div>
+										<div class="col-lg-4 col-md-4">
+											<div class="form-group">
+												<label for="longitude">Longitude</label>
+												<input type="text" class="form-control" id="longitude" placeholder="42.1512300">
+											</div>
+										</div>
+									</div>
+									<div class="row align-items-center mb-5">
+
+										<div class="col-lg-4 mr-auto">
+											<div class="row">
+												<div class="col-12">
+													<button href="#" class="theme-btn btn-style-one btn-md">Search 	Location</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<!-- Map Section -->
+									<div class="mapouter">
+										<div class="gmap_canvas">
+											<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9934.162415726383!2d-0.1195537!3d51.5032973!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4291f3172409ea92!2slastminute.com%20London%20Eye!5e0!3m2!1sen!2s!4v1616520468633!5m2!1sen!2s" id="gmap_canvas" width="100%" height="350" frameborder="0" scrolling="no" style="border:0;" allowfullscreen="" loading="lazy">
+											</iframe>
+										</div>
+									</div>
+									<!-- End Map Section -->
+								</form>
+							</div>
+
+
+						</div>
+						<div class="row align-items-center mb-5">
+
+							<div class="col-lg-4">
+								<a href="#" class="theme-btn btn-style-one">Publish Job</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- Start Footer Area -->
+		<footer class="main-footer">
+			<!--Footer Bottom-->
+			<div class="footer-bottom">
+				<div class="container">
+
+					<div class="inner-container clearfix">
+						<div class="footer-nav">
+							<ul class="clearfix">
+								<li><a href="#">Privacy / Policy</a></li> 
+								<li><a href="#">Terms & Conditions</a></li> 
+								<li><a href="#">About</a></li> 
+								<li><a href="#">Contact</a></li> 
+							</ul>
+						</div>
+						<div class="copyright-text text-center">
+							<p>Copyright &copy; 2023 Fait par:<strong>Jihad,Salma,Yassine et Boubacar</strong></p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- End Main Footer -->
+	</div>
+
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/isotope.pkgd.min.js"></script>
+	<script src="../js/jquery.waypoints.min.js"></script>
+	<script src="../js/jquery.animateNumber.min.js"></script>
+	<script src="../js/owl.carousel.min.js"></script>
+	<script src="../js/quill.min.js"></script>
+	<script src="../js/bootstrap-select.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/wow.js"></script>
+	<script src="js/dropzone.js"></script>
+	<script src="js/appear.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>

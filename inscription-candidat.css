@@ -1,0 +1,89 @@
+body {
+  background-color: lightgray;
+}
+#symbole::before {
+  content: '<';
+  color: #e0ad05;
+  padding-right: 5px;
+}
+a {
+  color: rgb(30, 8, 8);
+  text-decoration: none;
+  margin-left: 16%;
+}
+div {
+  padding-top: 0.2%;
+  text-align: center;
+  background-color: white;
+  margin-left: 17%;
+  margin-right: 17%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-family: 'Montserrat-SemiBold', Verdana, Arial, sans-serif;
+}
+#head {
+  color: #e7bb2c;
+}
+#champ {
+  text-align: left;
+  color: gray;
+}
+.marg {
+  margin-bottom: 2%;
+  border-radius: 17px;
+  color: white;
+  background-color: #e7bb2c;
+  border: none;
+  padding: 9px 9px;
+}
+label {
+  font-size: 80%;
+  display: inline-block;
+  width: 140px;
+  text-align: justify;
+}
+.show {
+  margin-bottom: 2%;
+  border-radius: 17px;
+  color: #b79011;
+  background-color: white;
+  border-color: #e7bb2c;
+  padding: 9px 9px;
+  border-width: thin;
+}
+.show:hover {
+  background-color: #e7bb2c;
+  color: white;
+}
+.marg:hover {
+  background-color: #a37f0a;
+  color: white;
+}
+input {
+  padding: 0 13px;
+}
+.dat {
+  padding: 0 13px;
+}
+.dat {
+  margin-right: 50px;
+}
+.etre {
+  margin-right: 35px;
+}
+#etre {
+  font-size: 100%;
+  display: inline-block;
+  width: 195px;
+  text-align: justify;
+}
+#dat {
+  font-size: 100%;
+  display: inline-block;
+  width: 170px;
+  text-align: justify;
+}
+.required::after {
+  content: '*';
+  color: red;
+}

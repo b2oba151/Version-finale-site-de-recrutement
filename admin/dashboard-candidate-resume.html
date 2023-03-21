@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Projet_3 - Dashboard Candidate Resume</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Stylesheets -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="../css/custom-bs.css">
+	<link rel="stylesheet" href="../css/jquery.fancybox.min.html">
+	<link rel="stylesheet" href="../css/bootstrap-select.min.css">
+	<link rel="stylesheet" href="../fonts/icomoon/style.css">
+	<link rel="stylesheet" href="../fonts/line-icons/style.css">
+	<link rel="stylesheet" href="../css/animate.min.css">
+	<link rel="stylesheet" href="../css/quill.snow.css">
+
+
+	<!-- MAIN CSS -->
+	<link href="css/style.css" rel="stylesheet">
+
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+	<button id="back-to-top-btn"> <span class="icon-keyboard_arrow_up"></span></button>
+
+	<div class="site-wrap">
+
+		<!-- Main Header-->
+		<header class="main-header">
+			<div class="main-box clearfix">
+				<!-- Logo Box -->
+				<div class="logo-box">
+					<div class="logo"><a href="../index-2.html"><img src="images/l" alt="" title=""></a></div>
+				</div>
+
+				<!-- Upper Right-->
+				<div class="upper-right">
+					<ul class="clearfix">
+						<li class="dropdown option-box">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="images/resource/thumb-1.jpg" alt="avatar" class="thumb">Welcom, John</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="dashboard-Candidats.html">Dashboard</a>
+								<a class="dropdown-item" href="dashboard-candidate-my-profile.html">My profile</a>
+								<a class="dropdown-item" href="../index-2.html">Log out</a>
+							</div>
+						</li>
+						
+						<li class="nav-toggler">
+							<button class="toggler-btn nav-btn"><span class="bar bar-one"></span><span class="bar bar-two"></span><span class="bar bar-three"></span></button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--End Header Lower-->
+		</header>
+		<!--End Main Header -->
+
+		<!-- Hidden Bar -->
+		<section class="hidden-bar">
+			<div class="dashboard-inner">
+				<div class="cross-icon"><span class="pe-7s-close-circle"></span></div>
+				<ul class="navigation">
+					<li><a href="dashboard-Candidats.html"><i class="pe-7s-culture"></i> Dashboard</a></li>
+					<li><a href="dashboard-candidate-my-profile.html"><i class="pe-7s-user"></i>My Profile</a></li>
+					<li><a href="dashboard-candidate-saved-jobs.html"><i class="pe-7s-note2"></i>Saved Jobs</a></li>
+					<li><a href="dashboard-candidate-manage-jobs.html"><i class="pe-7s-note2"></i>Manage Jobs</a></li>
+					<li class="active"><a href="dashboard-candidate-resume.html"><i class="pe-7s-up-arrow"></i>Post a Resume</a></li>
+					<li><a href="../index-2.html"><i class="pe-7s-back-2"></i>Logout</a></li>
+				</ul>
+			</div>
+		</section>
+		<!--End Hidden Bar -->
+
+		<div class="dashboard">
+			<div class="container-fluid">
+				<div class="content-area">
+					<div class="dashboard-content">
+						<div class="dashboard-header clearfix">
+							<div class="row">
+								<div class="col-md-6 col-sm-12"><h4>Post a Resume</h4></div>
+								<div class="col-md-6 col-sm-12">
+									<div class="breadcrumb-nav">
+										<ul>
+											<li><a href="../index-3.php">Index</a></li>
+											<li><a href="dashboard-Candidats.html">Dashboard</a></li>
+											<li class="active">Post a Resume</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+            <div class="row mb-5">
+              <div class="col-lg-12">
+                <form class="p-4 p-md-5 border rounded" method="post">
+                  <h3 class="text-black mb-5 border-bottom pb-2">General Information</h3>
+
+                  <div class="row">  
+                    <div class="col-lg-4 col-md-4">
+                      <div class="form-group">
+                        <label for="job-title">Name</label>
+                        <input type="text" class="form-control" id="job-title" placeholder="Your name">
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Email address" pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*">
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                      <div class="form-group">
+                        <label for="job-profession">Profession Title</label>
+                        <input type="text" class="form-control" id="job-profession" placeholder="e.g. Web developer">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-lg-4 col-md-4">
+                      <div class="form-group">
+                        <label for="candidate-age">Age</label>
+                        <input type="text" class="form-control" id="candidate-age" placeholder="How old are you?">
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                      <div class="form-group">
+                        <label for="job-location">Location</label>
+                        <input type="text" class="form-control" id="job-location" placeholder="e.g. New york">
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                      <div class="form-group">
+                        <label for="job-region">Gender</label>
+                        <select class="selectpicker border rounded" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Gender">
+                          <option>Male</option>
+                          <option>Female</option>
+                        </select>
+                      </div>
+                    </div>
+
+                   
+                  </div>
+
+                  <div class="row">  
+                     <div class="col-lg-4 col-md-4">
+                      <div class="form-group">
+                        <label for="job-type">Resume Category</label>
+                        <select class="selectpicker border rounded" id="job-type" data-style="btn-black" data-width="100%" data-live-search="true" title="Select Job Type">
+                          <option>Investment</option>
+                          <option>Marketing</option>
+                          <option>Management & Finance</option>
+                          <option>Software Development</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                      <div class="form-group">
+                        <label for="experience">Experience</label>
+                        <select class="selectpicker border rounded" id="experience" data-style="btn-black" data-width="100%" data-live-search="true" title="Choose experience">
+                          <option>No experience</option>
+                          <option>Less than 1 Year</option>
+                          <option>1 to 2 Years</option>
+                          <option>2 to 4 Years</option>
+                          <option>3 to 5 Years</option>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4">
+                   <div class="form-group">
+                    <label for="skills">Skills Requirements</label>
+                    <input type="text" class="form-control" id="skills" placeholder="Skills requirements">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label for="company-website-tw d-block">Upload Featured Image</label> <br>
+                <input type="file" id="myfile" name="myfile">
+              </div>
+
+              <div class="form-group">
+                <label for="job-description">Resume Description</label>
+                <div class="editor" id="editor-1"></div>
+              </div>
+
+              <h3 class="text-black mb-5 mt-5 border-bottom pb-2">Education (optional)</h3>
+
+              <div class="bg-light  p-3 rounded">
+
+               <div class="form-group">
+                <label for="school-name">School Name</label>
+                <input type="text" class="form-control" id="school-name" placeholder="School Name">
+              </div>
+
+              <div class="form-group">
+                <label for="qualification">Qualification(s)</label>
+                <input type="text" class="form-control" id="qualification" placeholder=" Qualification">
+              </div>
+
+              <div class="form-group">
+                <label for="start/end">Start/End Date</label>
+                <input type="date" class="form-control" id="start/end" placeholder="Start/End Date">
+              </div>
+
+              <div class="form-group">
+                <label for="notes">Notes (Optional)</label>
+                <input type="text" class="form-control" id="notes" placeholder="Notes">
+              </div>
+
+            </div>
+
+            <div class="mt-3 mb-5">
+              <a href="#" class="theme-btn btn-style-one">+ Add Education</a>
+            </div>
+
+            <h3 class="text-black mb-5 mt-5 border-bottom pb-2">Experience (optional)</h3>
+
+            <div class="bg-light rounded p-3">
+
+             <div class="form-group">
+              <label for="employer-name">Employer Name</label>
+              <input type="text" class="form-control" id="employer-name" placeholder="Employer Name">
+            </div>
+
+            <div class="form-group">
+              <label for="job-title">Job Title</label>
+              <input type="text" class="form-control" id="job-title" placeholder="Title">
+            </div>
+
+            <div class="form-group">
+              <label for="start/end">Start/End Date</label>
+              <input type="date" class="form-control" id="start/end" placeholder="Start/End Date">
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Notes (Optional)</label>
+              <input type="text" class="form-control" id="notes" placeholder="Notes">
+            </div>
+
+          </div>
+          <div class="mt-3 mb-5">
+            <a href="#" class="theme-btn btn-style-one">+ Add Experience</a>
+          </div>
+
+          <div class="form-group">
+            <label for="company-website-tw d-block">Resume File (Optional)</label> <br>
+            <input type="file" id="myfile" name="myfile">
+          </div>
+
+        </form>
+
+      </div>
+
+
+    </div>
+    <div class="row align-items-center mb-5">
+
+      <div class="col-lg-4">
+       <div class="row">
+        <div class="col-6">
+         <a href="#" class="theme-btn btn-style-one">Save Resume</a>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+</div>
+</div>
+</div>
+  <!-- Start Footer Area -->
+    <footer class="main-footer">
+      <!--Footer Bottom-->
+      <div class="footer-bottom">
+        <div class="container">
+
+          <div class="inner-container clearfix">
+            <div class="footer-nav">
+              <ul class="clearfix">
+                <li><a href="#">Privacy / Policy</a></li> 
+                <li><a href="#">Terms & Conditions</a></li> 
+                <li><a href="#">About</a></li> 
+                <li><a href="#">Contact</a></li> 
+              </ul>
+            </div>
+            <div class="copyright-text text-center">
+              <p>Copyright &copy; 2023 Fait par:<strong>Jihad,Salma,Yassine et Boubacar</strong></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Main Footer -->
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/isotope.pkgd.min.js"></script>
+<script src="../js/stickyfill.min.html"></script>
+<script src="../js/jquery.fancybox.min.html"></script>
+<script src="../js/jquery.easing.1.3.html"></script>
+
+<script src="../js/jquery.waypoints.min.js"></script>
+<script src="../js/jquery.animateNumber.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/quill.min.js"></script>
+
+
+<script src="../js/bootstrap-select.min.js"></script>
+
+<script src="../js/custom.js"></script>
+
+<script src="js/popper.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/dropzone.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/script.js"></script>
+
+<!--Google Map APi Key-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjirg3UoMD5oUiFuZt3P9sErZD-2Rxc68"></script>
+<script src="../js/map-script.js"></script>
+<!--End Google Map APi-->
+</body>
+
+</html>

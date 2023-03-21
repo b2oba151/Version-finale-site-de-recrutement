@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Projet_3 - Dashboard Candidats</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Stylesheets -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+	<link rel="stylesheet" href="../fonts/icomoon/style.css">
+
+	<!-- MAIN CSS --> 
+	<link href="css/style.css" rel="stylesheet">
+
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+	<button id="back-to-top-btn"> <span class="icon-keyboard_arrow_up"></span></button>
+
+	<div class="site-wrap">
+
+		<!-- Main Header-->
+		<header class="main-header">
+			<div class="main-box clearfix">
+				<!-- Logo Box -->
+				<div class="logo-box">
+					<div class="logo"><a href="../index-2.html"><img src="images/l" alt="" title=""></a></div>
+				</div>
+
+				<!-- Upper Right-->
+				<div class="upper-right">
+					<ul class="clearfix">
+						<li class="dropdown option-box">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="images/resource/thumb-1.jpg" alt="avatar" class="thumb">Welcom, John</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="dashboard-Candidats.html">Dashboard</a>
+								<a class="dropdown-item" href="dashboard-candidate-my-profile.html">My profile</a>
+								<a class="dropdown-item" href="../index-2.html">Log out</a>
+							</div>
+						</li>
+						
+						<li class="nav-toggler">
+							<button class="toggler-btn nav-btn"><span class="bar bar-one"></span><span class="bar bar-two"></span><span class="bar bar-three"></span></button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--End Header Lower-->
+		</header>
+		<!--End Main Header -->
+
+		<!-- Hidden Bar -->
+		<section class="hidden-bar">
+			<div class="dashboard-inner">
+				<div class="cross-icon"><span class="pe-7s-close-circle"></span></div>
+				<ul class="navigation">
+					<li class="active"><a href="dashboard-Candidats.html"><i class="pe-7s-culture"></i> Dashboard</a></li>
+					<li><a href="dashboard-candidate-my-profile.html"><i class="pe-7s-user"></i>My Profile</a></li>
+					<li><a href="dashboard-candidate-saved-jobs.html"><i class="pe-7s-note2"></i>Saved Jobs</a></li>
+					<li><a href="dashboard-candidate-manage-jobs.html"><i class="pe-7s-note2"></i>Manage Jobs</a></li>
+					<li><a href="dashboard-candidate-resume.html"><i class="pe-7s-up-arrow"></i>Post a Resume</a></li>
+					<li><a href="../index-2.html"><i class="pe-7s-back-2"></i>Logout</a></li>
+				</ul>
+			</div>
+		</section>
+		<!--End Hidden Bar -->
+
+
+		<div class="dashboard">
+			<div class="container-fluid">
+				<div class="content-area">
+					<div class="dashboard-content">
+						<div class="dashboard-header clearfix">
+							<div class="row">
+								<div class="col-md-6 col-sm-12"><h4>Dashboard</h4></div>
+								<div class="col-md-6 col-sm-12">
+									<div class="breadcrumb-nav">
+										<ul>
+											<li><a href="../index-2.html">Index</a></li>
+											<li class="active">Dashboard</li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-3 col-md-6 col-sm-6">
+								<div class="ui-item bg-success">
+									<div class="left">
+										<h4>10</h4>
+										<p>Total Applications</p>
+									</div>
+									<div class="right">
+										<i class="la la-globe"></i>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 col-sm-6">
+								<div class="ui-item bg-warning">
+									<div class="left">
+										<h4>22</h4>
+										<p>Shortlisted Applications</p>
+									</div>
+									<div class="right">
+										<i class="la la-thumbs-up"></i>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 col-sm-6">
+								<div class="ui-item bg-active">
+									<div class="left">
+										<h4>100</h4>
+										<p>Rejected Applications</p>
+									</div>
+									<div class="right">
+										<i class="la la-thumbs-down"></i>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6 col-sm-6">
+								<div class="ui-item bg-dark">
+									<div class="left">
+										<h4>12</h4>
+										<p>Call for interview</p>
+									</div>
+									<div class="right">
+										<i class="la la-phone"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- begin row -->
+						<div class="row">
+
+							<div class="col-lg-12">
+								<div class="card card-statistics">
+									<div class="card-body">
+										<div class="apexchart-wrapper">
+											<div id="jobsetchart"></div>
+										</div>
+									</div>
+								</div>
+							</div>                                  
+						</div>
+						<!-- end row -->
+
+						<!-- Start Jobs Area -->
+						<div class="site-section content-inner-2">
+							<div class="container-fluid">
+								<div class="d-flex job-title-bx">
+
+									<div class="mb-4 mt-5">
+										<h2>Recent Applied Jobs</h2>
+									</div>
+
+								</div>
+								<div class="row">
+									<div class="col-lg-12">
+										<ul class="post-job-bx">
+											<li>
+												<a href="../job-detail.php">
+													<div class="job-resp m-b30">
+														<div class="job-post-company">
+															<span><img src="../images/logo/icon1.png"/></span>
+														</div>
+														<div class="job-post-info">
+															<h4>Digital Marketing Manager</h4>
+															<ul>
+																<li><span class="icon icon-map-marker"></span> Bothell, WA, USA</li>
+																<li><span class="icon icon-filter"></span> Accountancy</li>
+																<li><span class="icon icon-suitcase"></span> Part Time</li>
+																<li><span class="icon icon-clock-o"></span> 6D ago</li>
+															</ul>
+														</div>
+													</div>
+													<span class="post-like icon icon-heart-o"></span>
+												</a>
+											</li>
+											<li>
+												<a href="../job-detail.php">
+													<div class="job-resp m-b30">
+														<div class="job-post-company">
+															<span><img src="../images/logo/icon2.png"/></span>
+														</div>
+														<div class="job-post-info">
+															<h4>Digital Marketing Manager</h4>
+															<ul>
+																<li><span class="icon icon-map-marker"></span> Wokingham</li>
+																<li><span class="icon icon-filter"></span> Charity & Voluntary</li>
+																<li><span class="icon icon-suitcase"></span> Full Time</li>
+																<li><span class="icon icon-clock-o"></span> 3M ago</li>
+															</ul>
+														</div>
+													</div>
+													
+													<span class="post-like icon icon-heart-o"></span>
+												</a>
+											</li>
+											<li>
+												<a href="../job-detail.php">
+													<div class="job-resp m-b30">
+														<div class="job-post-company">
+															<span><img src="../images/logo/icon3.png"/></span>
+														</div>
+														<div class="job-post-info">
+															<h4>Digital Marketing Manager</h4>
+															<ul>
+																<li><span class="icon icon-map-marker"></span> Nurseplus</li>
+																<li><span class="icon icon-filter"></span> Banking</li>
+																<li><span class="icon icon-suitcase"></span> Temporary</li>
+																<li><span class="icon icon-clock-o"></span> 2M ago</li>
+															</ul>
+														</div>
+													</div>
+
+													<span class="post-like icon icon-heart-o"></span>
+												</a>
+											</li>
+											<li>
+												<a href="../job-detail.php">
+													<div class="job-resp m-b30">
+														<div class="job-post-company">
+															<span><img src="../images/logo/icon4.png"/></span>
+														</div>
+														<div class="job-post-info">
+															<h4>Digital Marketing Manager</h4>
+															<ul>
+																<li><span class="icon icon-map-marker"></span> Needham, MA</li>
+																<li><span class="icon icon-filter"></span> IT & Telecoms</li>
+																<li><span class="icon icon-suitcase"></span> Part Time</li>
+																<li><span class="icon icon-clock-o"></span> 6D ago</li>
+															</ul>
+														</div>
+													</div>
+													
+													<span class="post-like icon icon-heart-o"></span>
+												</a>
+											</li>
+											<li>
+												<a href="../job-detail.php">
+													<div class="job-resp m-b30">
+														<div class="job-post-company">
+															<span><img src="../images/logo/icon5.png"/></span>
+														</div>
+														<div class="job-post-info">
+															<h4>Digital Marketing Manager</h4>
+															<ul>
+																<li><span class="icon icon-map-marker"></span> California, US</li>
+																<li><span class="icon icon-filter"></span> Accountancy</li>
+																<li><span class="icon icon-suitcase"></span> Freelance</li>
+																<li><span class="icon icon-clock-o"></span> 1M ago</li>
+															</ul>
+														</div>
+													</div>
+
+													<span class="post-like icon icon-heart-o"></span>
+												</a>
+											</li>
+											<li>
+												<a href="../job-detail.php">
+													<div class="job-resp m-b30">
+														<div class="job-post-company">
+															<span><img src="../images/logo/icon6.jpg"/></span>
+														</div>
+														<div class="job-post-info">
+															<h4>Digital Marketing Manager</h4>
+															<ul>
+																<li><span class="icon icon-map-marker"></span> New Denham</li>
+																<li><span class="icon icon-filter"></span> Web Developer</li>
+																<li><span class="icon icon-suitcase"></span> Full Time</li>
+																<li><span class="icon icon-clock-o"></span> 1M ago</li>
+															</ul>
+														</div>
+													</div>
+													<span class="post-like icon icon-heart-o"></span>
+												</a>
+											</li>
+										</ul>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Start Footer Area -->
+		<footer class="main-footer">
+			<!--Footer Bottom-->
+			<div class="footer-bottom">
+				<div class="container">
+
+					<div class="inner-container clearfix">
+						<div class="footer-nav">
+							<ul class="clearfix">
+								<li><a href="#">Privacy / Policy</a></li> 
+								<li><a href="#">Terms & Conditions</a></li> 
+								<li><a href="#">About</a></li> 
+								<li><a href="#">Contact</a></li> 
+							</ul>
+						</div>
+						<div class="copyright-text text-center">
+							<p>Copyright &copy; 2023 Fait par:<strong>Jihad,Salma,Hanane et Boubacar</strong></a></p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- End Main Footer -->
+	</div>
+
+
+	<script src="js/jquery.js"></script> 
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/wow.js"></script>
+	<script src="js/dropzone.js"></script>
+	<script src="js/appear.js"></script>
+	<script src="js/script.js"></script>
+
+	<!-- plugins -->
+	<script src="js/vendors.js"></script>
+
+	<!-- custom app -->
+	<script src="js/app.js"></script>
+</body>
+
+</html>
