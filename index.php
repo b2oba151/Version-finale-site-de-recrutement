@@ -100,10 +100,10 @@ session_start();
               <div class="ml-auto">
                 
                                                 <?php
-                                  session_start(); // Démarrer la session
+                                  session_start(); 
 
-                                  if(isset($_SESSION['id'])) { // Vérifier si l'utilisateur est connecté
-                                    // Afficher le bouton de déconnexion
+                                  if(isset($_SESSION['id'])) { 
+                                    
                                     echo '
                                       <form method="post">
                                         <div class="form-group">
@@ -112,7 +112,7 @@ session_start();
                                       </form>
                                     ';
                                   } else {
-                                    // Afficher le bouton de connexion
+                                    
                                     echo '
                                       <a href="connexioncandidat.php">
                                         <button type="button" class="theme-btn btn-style-four border-width-2 d-none d-lg-inline-block">connexion</button>
