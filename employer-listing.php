@@ -169,7 +169,6 @@
          <?php endforeach; ?>
 
 
-
 </ul>
 
 </div>

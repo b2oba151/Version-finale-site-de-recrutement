@@ -1,10 +1,7 @@
 <?php require 'config_bd.php' ?>
 <?php
 function afficher_candidats_tous_les_candidats() {
-    $host = "localhost";
-    $utilisateur = "root";
-    $mot_de_passe = "";
-    $base_de_donnees = "base_de_donnee_site_recrutement";
+  require 'config_bd.php';
 
     $connexion = mysqli_connect($host, $utilisateur, $mot_de_passe, $base_de_donnees);
 
@@ -58,10 +55,7 @@ function afficher_candidats_tous_les_candidats() {
 
 <?php 
 function afficher_competance_et_niveau_candidats(){
-  $host = "localhost";
-  $utilisateur = "root";
-  $mot_de_passe = "";
-  $base_de_donnees = "base_de_donnee_site_recrutement";
+  require 'config_bd.php';
   $connexion = mysqli_connect($host, $utilisateur, $mot_de_passe, $base_de_donnees);
 
   $sql = "SELECT c.id, c.nom, c.prenom, GROUP_CONCAT(comp.titre, ' (niveau : ', cc.niveau, ')') AS competences 
@@ -88,10 +82,7 @@ function afficher_competance_et_niveau_candidats(){
 <?php
 
 function infos_candidat($id){
-    $host = "localhost";
-    $utilisateur = "root";
-    $mot_de_passe = "";
-    $base_de_donnees = "base_de_donnees_site_recrutement";
+  require 'config_bd.php';
 
     $connexion = mysqli_connect($host, $utilisateur, $mot_de_passe, $base_de_donnees);
 
@@ -139,10 +130,7 @@ function infos_candidat($id){
 <?php
 function donneee_candidat($id) {
    
-    $host = "localhost";
-    $utilisateur = "root";
-    $mot_de_passe = "";
-    $base_de_donnees = "base_de_donnee_site_recrutement";
+  require 'config_bd.php';
 
     
     $connexion = mysqli_connect($host, $utilisateur, $mot_de_passe, $base_de_donnees);
@@ -181,10 +169,7 @@ ini_set('display_errors', 1);
 
 function getCandidatCompetences($id_candidat) {
     
-    $host = "localhost";
-    $utilisateur = "root";
-    $mot_de_passe = "";
-    $base_de_donnees = "base_de_donnee_site_recrutement";
+  require 'config_bd.php';
   
     $conn = new mysqli($host, $utilisateur, $mot_de_passe, $base_de_donnees);
     if ($conn->connect_error) {
@@ -218,10 +203,7 @@ function getCandidatCompetences($id_candidat) {
 <?php 
 function getFormationsByIdCandidat($idCandidat) {
     
-    $host = "localhost";
-    $utilisateur = "root";
-    $mot_de_passe = "";
-    $base_de_donnees = "base_de_donnee_site_recrutement";
+  require 'config_bd.php';
     $conn = mysqli_connect($host, $utilisateur, $mot_de_passe, $base_de_donnees);
     if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
@@ -257,10 +239,7 @@ function getFormationsByIdCandidat($idCandidat) {
 
 <?php 
 function getOffresEmploiRecruteurs() {
-    $host = "localhost";
-    $utilisateur = "root";
-    $mot_de_passe = "";
-    $base_de_donnees = "base_de_donnee_site_recrutement";
+   require 'config_bd.php';
   
     
     $conn = new mysqli($host, $utilisateur, $mot_de_passe, $base_de_donnees);
@@ -301,11 +280,11 @@ function getOffresEmploiRecruteurs() {
 function getRecruiterInfo($id_recruteur) {
 
   $host = "localhost";
-    $utilisateur = "root";
-    $mot_de_passe = "";
-    $base_de_donnees = "base_de_donnee_site_recrutement";
+  $utilisateur = "root";
+  $mot_de_passe = "";
+  $base_de_donnees = "base_de_donnee_site_recrutement";
 
-  $conn = mysqli_connect($host, $utilisateur, $mot_de_passe, "base_de_donnee_site_recrutement");
+  $conn = mysqli_connect($host, $utilisateur, $mot_de_passe, $base_de_donnees);
 
   $query = "SELECT offres_emploi.*, COUNT(offres_emploi.id) AS nb_offres,recruteurs.nom_entreprise AS ne,recruteurs.email AS em,recruteurs.adresse AS ad,recruteurs.code_postal AS cp,recruteurs.ville AS vi,recruteurs.pays AS pa,recruteurs.descriptions AS rec_desc FROM offres_emploi 
             INNER JOIN recruteurs ON offres_emploi.id_recruteur = recruteurs.id 
@@ -363,10 +342,7 @@ function getRecruiterInfo($id_recruteur) {
 <?php 
 
 function getRecruteursAndOffreInfo($offre_id) {
-  $host = "localhost";
-  $utilisateur = "root";
-  $mot_de_passe = "";
-  $base_de_donnees = "base_de_donnee_site_recrutement";
+  require 'config_bd.php';
   
   $conn = mysqli_connect($host, $utilisateur, $mot_de_passe, $base_de_donnees);
   
@@ -375,9 +351,9 @@ function getRecruteursAndOffreInfo($offre_id) {
   }
   
   $sql = "SELECT offres_emploi.*, recruteurs.nom_entreprise AS ne, recruteurs.email AS em, recruteurs.adresse AS ad, recruteurs.code_postal AS cp, recruteurs.ville AS vi, recruteurs.pays AS pa, recruteurs.descriptions AS rec_desc
-          FROM offres_emploi
-          JOIN recruteurs ON offres_emploi.id_recruteur = recruteurs.id
-          WHERE offres_emploi.id = $offre_id";
+  FROM offres_emploi
+  JOIN recruteurs ON offres_emploi.id_recruteur = recruteurs.id
+  WHERE offres_emploi.id = $offre_id";
   
   $result = mysqli_query($conn, $sql);
   
@@ -564,10 +540,7 @@ function inscrireUtilisateur($email, $motDePasse, $profilId, $type, $nom = null,
 <?php 
 function getCategoriesTravail()
 {
-  $host = "localhost";
- $utilisateur = "root";
-  $mot_de_passe = "";
-  $base_de_donnees = "base_de_donnee_site_recrutement";
+  require 'config_bd.php';
     $pdo =new PDO("mysql:host=$host;dbname=$base_de_donnees",$utilisateur, $mot_de_passe);
     $query = "SELECT DISTINCT categorie_travail FROM offres_emploi";
     $result = $pdo->query($query);
@@ -605,10 +578,7 @@ function getTitreProffesion()
 <?php 
 function getcompetances()
 {
-  $host = "localhost";
- $utilisateur = "root";
-  $mot_de_passe = "";
-  $base_de_donnees = "base_de_donnee_site_recrutement";
+  require 'config_bd.php';
 
     $pdo = new PDO("mysql:host=$host;dbname=$base_de_donnees",$utilisateur, $mot_de_passe);
     $query = "SELECT titre FROM `competences`;";
@@ -666,10 +636,7 @@ function reccuperer_candidat_nom_prenom_liste_compeance_postulation_et_category_
 
 <?php
 function getOffresEmploi() {
-  $host = "localhost";
-  $utilisateur = "root";
-  $mot_de_passe = "";
-  $base_de_donnees = "base_de_donnee_site_recrutement";
+  require 'config_bd.php';
 
   $conn = new mysqli($host, $utilisateur, $mot_de_passe, $base_de_donnees);
 
