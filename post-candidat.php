@@ -67,23 +67,50 @@
                     </li>
                   </ul>
                 </li>
-                <li class="has-children">
-                  <a href="#">Pages</a>
-                  <ul class="dropdown">
-                    <li><a href="about.html">A propos</a></li>
-                    <li><a href="connexioncandidat.php"> connecter candidat</a></li>
-                    <li><a href="connexion-recr.php">connecter recruteur</a></li>
-                  </ul>
-                </li>
+                           <li class="has-children">
+              <a href="#">Emplois</a>
+              <ul class="dropdown">
+                <li><a href="job-listing.php">Liste des emplois</a></li>
+               
+                <li><a href="job-detail.php">Détail de l'emploi</a></li>
+              </ul>
+            </li>
+
             </nav>
 
-       <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-        <div class="ml-auto">
-          <a href="post-job.php" class="theme-btn btn-style-three border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Postuler Emploi</a>
+       <div class="ml-auto">
+                
+<?php
+session_start(); 
 
-          <a href="connexioncandidat.php"> <button type="button" class="theme-btn btn-style-four border-width-2 d-none d-lg-inline-block">connexion</button> </a>
+if(isset($_SESSION['id'])) { 
 
-        </div>
+echo '
+<form method="post">
+<div class="form-group">
+<button type="submit" name="deconnexion" class="theme-btn btn-style-four border-width-2 d-none d-lg-inline-block">Déconnexion</button>
+</div>
+</form>
+';
+} else {
+
+echo '
+
+<a href="connexioncandidat.php" class="theme-btn btn-style-four border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Connexion</a><span>   </span><a href="inscription-recr.php"  class="theme-btn btn-style-four border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Inscription</a>
+';
+}
+
+if(isset($_POST['deconnexion'])) { 
+
+session_unset();
+session_destroy();
+header("Location: index.php"); 
+exit(); 
+}
+?>
+
+
+</div>
         <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
       </div>
 

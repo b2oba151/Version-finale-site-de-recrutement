@@ -75,14 +75,15 @@ require 'fonctions.php'
                     </li>
                   </ul>
                 </li>
-                <li class="has-children">
-                  <a href="#">Pages</a>
-                  <ul class="dropdown">
-                    <li><a href="about.html">A propos</a></li>
-                    <li><a href="connexioncandidat.php"> connecter candidat</a></li>
-                    <li><a href="connexion-recr.php">connecter recruteur</a></li>
-                  </ul>
-                </li>
+                           <li class="has-children">
+              <a href="#">Emplois</a>
+              <ul class="dropdown">
+                <li><a href="job-listing.php">Liste des emplois</a></li>
+               
+                <li><a href="job-detail.php">Détail de l'emploi</a></li>
+              </ul>
+            </li>
+
             </nav>
 
             <div

@@ -84,14 +84,15 @@ session_start();
                     </li>
                   </ul>
                 </li>
-                <li class="has-children">
-                  <a href="#">Pages</a>
-                  <ul class="dropdown">
-                    <li><a href="about.html">A propos</a></li>
-                    <li><a href="connexioncandidat.php"> connecter candidat</a></li>
-                    <li><a href="connexion-recr.php">connecter recruteur</a></li>
-                  </ul>
-                </li>
+                           <li class="has-children">
+              <a href="#">Emplois</a>
+              <ul class="dropdown">
+                <li><a href="job-listing.php">Liste des emplois</a></li>
+               
+                <li><a href="job-detail.php">Détail de l'emploi</a></li>
+              </ul>
+            </li>
+
             </nav>
 
             <div
@@ -114,9 +115,8 @@ session_start();
                                   } else {
                                     
                                     echo '
-                                      <a href="connexioncandidat.php">
-                                        <button type="button" class="theme-btn btn-style-four border-width-2 d-none d-lg-inline-block">connexion</button>
-                                      </a>
+                                      
+                                      <a href="connexioncandidat.php" class="theme-btn btn-style-four border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Connexion</a><span>   </span><a href="inscription-recr.php"  class="theme-btn btn-style-four border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Inscription</a>
                                     ';
                                   }
 
