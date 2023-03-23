@@ -1,26 +1,25 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : sam. 18 mars 2023 à 07:01
--- Version du serveur : 10.10.3-MariaDB
--- Version de PHP : 8.2.2
+-- Généré le : jeu. 23 mars 2023 à 21:14
+-- Version du serveur : 10.4.27-MariaDB
+-- Version de PHP : 8.2.0
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+-- -----------------------------------------------------
+-- Schema default_schema
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema base_de_donnee_site_recrutement
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `base_de_donnee_site_recrutement` ;
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de données : `base_de_donnee_site_recrutement`
---
-
+-- -----------------------------------------------------
+-- Schema base_de_donnee_site_recrutement
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `base_de_donnee_site_recrutement` DEFAULT CHARACTER SET utf8 ;
+USE `base_de_donnee_site_recrutement` ;
 -- --------------------------------------------------------
 
 --
@@ -38,7 +37,7 @@ CREATE TABLE `candidats` (
   `code_postal` varchar(10) NOT NULL,
   `ville` varchar(255) NOT NULL,
   `pays` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `candidats`
@@ -66,7 +65,7 @@ CREATE TABLE `candidats_competences` (
   `id_candidat` int(10) UNSIGNED NOT NULL,
   `id_competence` int(10) UNSIGNED NOT NULL,
   `niveau` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `candidats_competences`
@@ -94,7 +93,7 @@ CREATE TABLE `competences` (
   `id` int(10) UNSIGNED NOT NULL,
   `titre` varchar(255) NOT NULL,
   `description` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `competences`
@@ -131,7 +130,7 @@ CREATE TABLE `cv` (
   `type_travail` varchar(45) DEFAULT NULL,
   `experience` varchar(45) DEFAULT NULL,
   `image` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `cv`
@@ -163,7 +162,7 @@ CREATE TABLE `experiances` (
   `description_bref` varchar(255) DEFAULT NULL,
   `date_debut` date DEFAULT NULL,
   `date_fin` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `experiances`
@@ -195,7 +194,7 @@ CREATE TABLE `formations` (
   `date_debut` date DEFAULT NULL,
   `date_fin` date DEFAULT NULL,
   `diplome` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `formations`
@@ -240,23 +239,23 @@ CREATE TABLE `offres_emploi` (
   `numero_telephone` varchar(45) DEFAULT NULL,
   `email_entreprise` varchar(45) DEFAULT NULL,
   `adresse_entreprise` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `offres_emploi`
 --
 
 INSERT INTO `offres_emploi` (`id`, `id_recruteur`, `titre`, `description`, `date_publication`, `date_limite`, `ville_offre`, `salaire`, `email_recruteur`, `type_travail`, `experience`, `niveau_etude`, `nom_industrie`, `categorie_travail`, `images`, `nom_societe`, `site_internet`, `numero_telephone`, `email_entreprise`, `adresse_entreprise`) VALUES
-(2, 1, 'Développeur Full-Stack', 'Nous recherchons un développeur Full-Stack pour rejoindre notre équipe.', '2022-03-18', '2022-04-18', 'Paris', 50000.00, 'recruteur1@gmail.com', 'CDI', '2-3 ans', 'Bac+5', 'Informatique', 'Développement', NULL, 'Ma société', 'www.masociete.com', '01 23 45 67 89', 'contact@masociete.com', '10 rue des exemples'),
-(3, 1, 'Chef de projet marketing', 'Nous recherchons un chef de projet marketing pour notre entreprise.', '2022-03-18', '2022-04-18', 'Lyon', 45000.00, 'recruteur1@gmail.com', 'CDI', '3-5 ans', 'Bac+5', 'Marketing', 'Gestion de projet', NULL, 'Ma société', 'www.masociete.com', '01 23 45 67 89', 'contact@masociete.com', '10 rue des exemples'),
-(4, 2, 'Développeur Back-End', 'Nous recherchons un développeur Back-End pour notre start-up.', '2022-03-18', '2022-04-18', 'Marseille', 55000.00, 'recruteur2@gmail.com', 'CDI', '2-3 ans', 'Bac+5', 'Informatique', 'Développement', NULL, 'Ma start-up', 'www.mastartup.com', '01 23 45 67 89', 'contact@mastartup.com', '5 rue des exemples'),
-(5, 2, 'Designer graphique', 'Nous recherchons un designer graphique pour notre start-up.', '2022-03-18', '2022-04-18', 'Bordeaux', 40000.00, 'recruteur2@gmail.com', 'CDI', '1-2 ans', 'Bac+3', 'Design', 'Graphisme', NULL, 'Ma start-up', 'www.mastartup.com', '01 23 45 67 89', 'contact@mastartup.com', '5 rue des exemples'),
-(6, 3, 'Développeur iOS', 'Nous recherchons un développeur iOS pour notre entreprise.', '2022-03-18', '2022-04-18', 'Toulouse', 60000.00, 'recruteur3@gmail.com', 'CDI', '3-5 ans', 'Bac+5', 'Informatique', 'Développement', NULL, 'Ma société', 'www.masociete.com', '01 23 45 67 89', 'contact@masociete.com', '10 rue des exemples'),
-(7, 7, 'Développeur Full Stack', 'Nous cherchons un développeur Full Stack pour rejoindre notre équipe.', '2022-01-01', '2022-06-30', 'Paris', 50000.00, 'recrutement@entreprise.com', 'CDI', '3 ans', 'Bac+5', 'Informatique', 'Informatique', 'image1.png', 'Entreprise1', 'www.entreprise1.com', '0102030405', 'contact@entreprise1.com', '10 Rue de l\'Entreprise 75001 Paris'),
-(8, 5, 'Chef de projet marketing', 'Nous cherchons un chef de projet marketing pour gérer notre stratégie de communication.', '2022-02-01', '2022-07-31', 'Lyon', 60000.00, 'recrutement@entreprise.com', 'CDI', '5 ans', 'Bac+5', 'Marketing', 'Marketing', 'image2.png', 'Entreprise2', 'www.entreprise2.com', '0607080910', 'contact@entreprise2.com', '20 Rue de l\'Entreprise 69001 Lyon'),
-(9, 3, 'Ingénieur mécanique', 'Nous cherchons un ingénieur mécanique pour concevoir nos produits.', '2022-03-01', '2022-08-31', 'Toulouse', 70000.00, 'recrutement@entreprise.com', 'CDI', '7 ans', 'Bac+5', 'Mécanique', 'Ingénierie', 'image3.png', 'Entreprise3', 'www.entreprise3.com', '0506070809', 'contact@entreprise3.com', '30 Rue de l\'Entreprise 31000 Toulouse'),
-(10, 4, 'Technicien de maintenance', 'Nous cherchons un technicien de maintenance pour assurer le bon fonctionnement de nos équipements.', '2022-04-01', '2022-09-30', 'Marseille', 40000.00, 'recrutement@entreprise.com', 'CDI', '2 ans', 'Bac+2', 'Maintenance', 'Technique', 'image4.png', 'Entreprise4', 'www.entreprise4.com', '0405060708', 'contact@entreprise4.com', '40 Rue de l\'Entreprise 13001 Marseille'),
-(11, 5, 'Commercial B2B', 'Nous cherchons un commercial B2B pour développer notre portefeuille clients.', '2022-05-01', '2022-10-31', 'Nantes', 55000.00, 'recrutement@entreprise.com', 'CDI', '4 ans', 'Bac+3', 'Commerce', 'Vente', 'image5.png', 'Entreprise5', 'www.entreprise5.com', '0304050607', 'contact@entreprise5.com', '30 Rue de l\'Entreprise 31000 Toulouse');
+(2, 1, 'Développeur Full-Stack', 'Nous recherchons un développeur Full-Stack pour rejoindre notre équipe.', '2022-03-18', '2022-04-18', 'Paris', '50000.00', 'recruteur1@gmail.com', 'CDI', '2-3 ans', 'Bac+5', 'Informatique', 'Développement', NULL, 'Ma société', 'www.masociete.com', '01 23 45 67 89', 'contact@masociete.com', '10 rue des exemples'),
+(3, 1, 'Chef de projet marketing', 'Nous recherchons un chef de projet marketing pour notre entreprise.', '2022-03-18', '2022-04-18', 'Lyon', '45000.00', 'recruteur1@gmail.com', 'CDI', '3-5 ans', 'Bac+5', 'Marketing', 'Gestion de projet', NULL, 'Ma société', 'www.masociete.com', '01 23 45 67 89', 'contact@masociete.com', '10 rue des exemples'),
+(4, 2, 'Développeur Back-End', 'Nous recherchons un développeur Back-End pour notre start-up.', '2022-03-18', '2022-04-18', 'Marseille', '55000.00', 'recruteur2@gmail.com', 'CDI', '2-3 ans', 'Bac+5', 'Informatique', 'Développement', NULL, 'Ma start-up', 'www.mastartup.com', '01 23 45 67 89', 'contact@mastartup.com', '5 rue des exemples'),
+(5, 2, 'Designer graphique', 'Nous recherchons un designer graphique pour notre start-up.', '2022-03-18', '2022-04-18', 'Bordeaux', '40000.00', 'recruteur2@gmail.com', 'CDI', '1-2 ans', 'Bac+3', 'Design', 'Graphisme', NULL, 'Ma start-up', 'www.mastartup.com', '01 23 45 67 89', 'contact@mastartup.com', '5 rue des exemples'),
+(6, 3, 'Développeur iOS', 'Nous recherchons un développeur iOS pour notre entreprise.', '2022-03-18', '2022-04-18', 'Toulouse', '60000.00', 'recruteur3@gmail.com', 'CDI', '3-5 ans', 'Bac+5', 'Informatique', 'Développement', NULL, 'Ma société', 'www.masociete.com', '01 23 45 67 89', 'contact@masociete.com', '10 rue des exemples'),
+(7, 7, 'Développeur Full Stack', 'Nous cherchons un développeur Full Stack pour rejoindre notre équipe.', '2022-01-01', '2022-06-30', 'Paris', '50000.00', 'recrutement@entreprise.com', 'CDI', '3 ans', 'Bac+5', 'Informatique', 'Informatique', 'image1.png', 'Entreprise1', 'www.entreprise1.com', '0102030405', 'contact@entreprise1.com', '10 Rue de l\'Entreprise 75001 Paris'),
+(8, 5, 'Chef de projet marketing', 'Nous cherchons un chef de projet marketing pour gérer notre stratégie de communication.', '2022-02-01', '2022-07-31', 'Lyon', '60000.00', 'recrutement@entreprise.com', 'CDI', '5 ans', 'Bac+5', 'Marketing', 'Marketing', 'image2.png', 'Entreprise2', 'www.entreprise2.com', '0607080910', 'contact@entreprise2.com', '20 Rue de l\'Entreprise 69001 Lyon'),
+(9, 3, 'Ingénieur mécanique', 'Nous cherchons un ingénieur mécanique pour concevoir nos produits.', '2022-03-01', '2022-08-31', 'Toulouse', '70000.00', 'recrutement@entreprise.com', 'CDI', '7 ans', 'Bac+5', 'Mécanique', 'Ingénierie', 'image3.png', 'Entreprise3', 'www.entreprise3.com', '0506070809', 'contact@entreprise3.com', '30 Rue de l\'Entreprise 31000 Toulouse'),
+(10, 4, 'Technicien de maintenance', 'Nous cherchons un technicien de maintenance pour assurer le bon fonctionnement de nos équipements.', '2022-04-01', '2022-09-30', 'Marseille', '40000.00', 'recrutement@entreprise.com', 'CDI', '2 ans', 'Bac+2', 'Maintenance', 'Technique', 'image4.png', 'Entreprise4', 'www.entreprise4.com', '0405060708', 'contact@entreprise4.com', '40 Rue de l\'Entreprise 13001 Marseille'),
+(11, 5, 'Commercial B2B', 'Nous cherchons un commercial B2B pour développer notre portefeuille clients.', '2022-05-01', '2022-10-31', 'Nantes', '55000.00', 'recrutement@entreprise.com', 'CDI', '4 ans', 'Bac+3', 'Commerce', 'Vente', 'image5.png', 'Entreprise5', 'www.entreprise5.com', '0304050607', 'contact@entreprise5.com', '30 Rue de l\'Entreprise 31000 Toulouse');
 
 -- --------------------------------------------------------
 
@@ -267,7 +266,7 @@ INSERT INTO `offres_emploi` (`id`, `id_recruteur`, `titre`, `description`, `date
 CREATE TABLE `offres_emploi_competences` (
   `id_offre` int(10) UNSIGNED NOT NULL,
   `id_competence` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `offres_emploi_competences`
@@ -297,7 +296,7 @@ CREATE TABLE `postulations` (
   `id_candidat` int(10) UNSIGNED NOT NULL,
   `date_postulation` date NOT NULL,
   `lettre_motivation` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `postulations`
@@ -325,7 +324,7 @@ CREATE TABLE `profils` (
   `id` int(10) UNSIGNED NOT NULL,
   `nom` varchar(50) NOT NULL,
   `description` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `profils`
@@ -357,24 +356,25 @@ CREATE TABLE `recruteurs` (
   `adresse` varchar(255) NOT NULL,
   `code_postal` varchar(10) NOT NULL,
   `ville` varchar(255) NOT NULL,
-  `pays` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+  `pays` varchar(255) NOT NULL,
+  `descriptions` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `recruteurs`
 --
 
-INSERT INTO `recruteurs` (`id`, `nom_entreprise`, `email`, `mot_de_passe`, `adresse`, `code_postal`, `ville`, `pays`) VALUES
-(1, 'Entreprise 1', 'entreprise1@gmail.com', 'mdp1', '123 rue des entreprises', '75001', 'Paris', 'France'),
-(2, 'Entreprise 2', 'entreprise2@gmail.com', 'mdp2', '456 avenue des affaires', '69002', 'Lyon', 'France'),
-(3, 'Entreprise 3', 'entreprise3@gmail.com', 'mdp3', '789 boulevard du commerce', '13008', 'Marseille', 'France'),
-(4, 'Entreprise 4', 'entreprise4@gmail.com', 'mdp4', '10 rue de la finance', '33000', 'Bordeaux', 'France'),
-(5, 'Entreprise 5', 'entreprise5@gmail.com', 'mdp5', '11 avenue des startups', '75008', 'Paris', 'France'),
-(6, 'Entreprise 6', 'entreprise6@gmail.com', 'mdp6', '12 rue de l\'industrie', '31000', 'Toulouse', 'France'),
-(7, 'Entreprise 7', 'entreprise7@gmail.com', 'mdp7', '13 avenue des investisseurs', '44000', 'Nantes', 'France'),
-(8, 'Entreprise 8', 'entreprise8@gmail.com', 'mdp8', '14 boulevard de la gestion', '69001', 'Lyon', 'France'),
-(9, 'Entreprise 9', 'entreprise9@gmail.com', 'mdp9', '15 rue de la comptabilité', '13001', 'Marseille', 'France'),
-(10, 'Entreprise 10', 'entreprise10@gmail.com', 'mdp10', '16 avenue de la direction', '75016', 'Paris', 'France');
+INSERT INTO `recruteurs` (`id`, `nom_entreprise`, `email`, `mot_de_passe`, `adresse`, `code_postal`, `ville`, `pays`, `descriptions`) VALUES
+(1, 'Entreprise 1', 'entreprise1@gmail.com', 'mdp1', '123 rue des entreprises', '75001', 'Paris', 'France', 'testLorem ipsum, dolor sit amet consectetur adipisicing elit. A consequatur perferendis, vel eum, soluta eaque velit quasi accusantium porro numquam repellendus voluptate placeat voluptas sunt provident. Atque voluptatibus qui aliquam?'),
+(2, 'Entreprise 2', 'entreprise2@gmail.com', 'mdp2', '456 avenue des affaires', '69002', 'Lyon', 'France', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A consequatur perferendis, vel eum, soluta eaque velit quasi accusantium porro numquam repellendus voluptate placeat voluptas sunt provident. Atque voluptatibus qui aliquam?'),
+(3, 'Entreprise 3', 'entreprise3@gmail.com', 'mdp3', '789 boulevard du commerce', '13008', 'Marseille', 'France', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A consequatur perferendis, vel eum, soluta eaque velit quasi accusantium porro numquam repellendus voluptate placeat voluptas sunt provident. Atque voluptatibus qui aliquam?'),
+(4, 'Entreprise 4', 'entreprise4@gmail.com', 'mdp4', '10 rue de la finance', '33000', 'Bordeaux', 'France', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A consequatur perferendis, vel eum, soluta eaque velit quasi accusantium porro numquam repellendus voluptate placeat voluptas sunt provident. Atque voluptatibus qui aliquam?'),
+(5, 'Entreprise 5', 'entreprise5@gmail.com', 'mdp5', '11 avenue des startups', '75008', 'Paris', 'France', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A consequatur perferendis, vel eum, soluta eaque velit quasi accusantium porro numquam repellendus voluptate placeat voluptas sunt provident. Atque voluptatibus qui aliquam?'),
+(6, 'Entreprise 6', 'entreprise6@gmail.com', 'mdp6', '12 rue de l\'industrie', '31000', 'Toulouse', 'France', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A consequatur perferendis, vel eum, soluta eaque velit quasi accusantium porro numquam repellendus voluptate placeat voluptas sunt provident. Atque voluptatibus qui aliquam?'),
+(7, 'Entreprise 7', 'entreprise7@gmail.com', 'mdp7', '13 avenue des investisseurs', '44000', 'Nantes', 'France', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A consequatur perferendis, vel eum, soluta eaque velit quasi accusantium porro numquam repellendus voluptate placeat voluptas sunt provident. Atque voluptatibus qui aliquam?'),
+(8, 'Entreprise 8', 'entreprise8@gmail.com', 'mdp8', '14 boulevard de la gestion', '69001', 'Lyon', 'France', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A consequatur perferendis, vel eum, soluta eaque velit quasi accusantium porro numquam repellendus voluptate placeat voluptas sunt provident. Atque voluptatibus qui aliquam?'),
+(9, 'Entreprise 9', 'entreprise9@gmail.com', 'mdp9', '15 rue de la comptabilité', '13001', 'Marseille', 'France', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A consequatur perferendis, vel eum, soluta eaque velit quasi accusantium porro numquam repellendus voluptate placeat voluptas sunt provident. Atque voluptatibus qui aliquam?'),
+(10, 'Entreprise 10', 'entreprise10@gmail.com', 'mdp10', '16 avenue de la direction', '75016', 'Paris', 'France', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A consequatur perferendis, vel eum, soluta eaque velit quasi accusantium porro numquam repellendus voluptate placeat voluptas sunt provident. Atque voluptatibus qui aliquam?');
 
 -- --------------------------------------------------------
 
@@ -389,7 +389,7 @@ CREATE TABLE `utilisateurs` (
   `profil_id` int(10) UNSIGNED NOT NULL,
   `type` varchar(45) NOT NULL,
   `id_candidat_ou_recruteur` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `utilisateurs`
@@ -630,7 +630,3 @@ ALTER TABLE `utilisateurs`
   ADD CONSTRAINT `fk_utilisateurs_avec_profils` FOREIGN KEY (`profil_id`) REFERENCES `profils` (`id`),
   ADD CONSTRAINT `fk_utilisateurs_avec_recr` FOREIGN KEY (`id_candidat_ou_recruteur`) REFERENCES `recruteurs` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
