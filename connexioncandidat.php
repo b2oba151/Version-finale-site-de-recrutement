@@ -22,10 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['id'] = $row['id_candidat_ou_recruteur'];
                 $_SESSION['type'] = $row['type'];
                 if($row['type'] ==='recruteur') {
-                    header('Location: home-recruteur.php');
+                    header('Location: index.php');
                     exit;
                 } elseif($row['type'] ==='candidat') {
-                    header('Location: home-candidat.php');
+                    header('Location: index.php');
                     exit;
                 }
                 

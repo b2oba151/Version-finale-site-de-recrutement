@@ -46,19 +46,29 @@ session_start();
                 <li class="has-children">
                   <a href="index.php" class="nav-link active">Acceuil</a>
                 </li>
-                <li class="has-children">
-                  <a href="#">Recruteurs</a>
-                  <ul class="dropdown">
-                    <li>
-                      <a href="employer-listing.php">Liste des offres</a>
-                    </li>
-                    <li>
-                      <a href="job-detail.php">Details des offre</a>
-                    </li>
-                    <li><a href="post-job.php">Publier une offre</a></li>
-                    
-                  </ul>
-                </li>
+
+                
+                                <li class="has-children">
+                                  <a href="#">Recruteurs</a>
+                                  <ul class="dropdown">
+                                    <li>
+                                      <a href="employer-listing.php">Liste des offres</a>
+                                    </li>
+                                    <li>
+                                      <a href="job-detail.php">Details des offre</a>
+                                    </li><?php
+                              if ($_SESSION['type'] == 'recruteur') {
+                                // Afficher la partie du code
+                              ?>
+                                    <li><a href="post-job.php">Publier une offre</a></li>
+                                    <?php
+                              } else {
+                              
+                              } ?>
+                                  </ul>
+                                </li>
+                              
+              
 
                 <li class="has-children">
                   <a href="#">Candidats</a>
@@ -88,13 +98,38 @@ session_start();
               class="right-cta-menu text-right d-flex aligin-items-center col-6"
             >
               <div class="ml-auto">
-                <a
-                  href="post-job.php"
-                  class="theme-btn btn-style-three border-width-2 d-none d-lg-inline-block"
-                  ><span class="mr-2 icon-add"></span>Poster offre
-                </a>
+                
+                                                <?php
+                                  session_start(); // Démarrer la session
 
-               <a href="connexioncandidat.php"> <button type="button" class="theme-btn btn-style-four border-width-2 d-none d-lg-inline-block">connexion</button> </a>
+                                  if(isset($_SESSION['id'])) { // Vérifier si l'utilisateur est connecté
+                                    // Afficher le bouton de déconnexion
+                                    echo '
+                                      <form method="post">
+                                        <div class="form-group">
+                                          <button type="submit" name="deconnexion" class="theme-btn btn-style-four border-width-2 d-none d-lg-inline-block">Déconnexion</button>
+                                        </div>
+                                      </form>
+                                    ';
+                                  } else {
+                                    // Afficher le bouton de connexion
+                                    echo '
+                                      <a href="connexioncandidat.php">
+                                        <button type="button" class="theme-btn btn-style-four border-width-2 d-none d-lg-inline-block">connexion</button>
+                                      </a>
+                                    ';
+                                  }
+
+                                  if(isset($_POST['deconnexion'])) { 
+                                    
+                                    session_unset();
+                                    session_destroy();
+                                    header("Location: index.php"); 
+                                    exit(); 
+                                  }
+                                  ?>
+
+              
               </div>
             </div>
           </div>
