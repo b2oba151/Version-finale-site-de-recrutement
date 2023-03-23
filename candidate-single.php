@@ -1,5 +1,11 @@
-<?php require 'fonctions.php';
-$id=2;
+<?php 
+session_start();require 'fonctions.php';
+ $id=$_SESSION['id'] ;
+// //$id=2;
+//if($_POST['viewProfils']){
+  
+//}
+
 ?>
 
 <!DOCTYPE html>

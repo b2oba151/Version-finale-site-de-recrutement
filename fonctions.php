@@ -42,7 +42,7 @@ function afficher_candidats_tous_les_candidats() {
         echo "</div>";
         echo "</div>";
         echo "<div class='J-open'>";
-        echo "<button type='submit' class='theme-btn btn-style-one'>View Profile</button>";
+        echo "<button type='submit' name='viewProfils' class='theme-btn btn-style-one'>View Profile</button>";
         echo "</div>";
         echo "</a>";
         echo "</li>";
@@ -690,3 +690,11 @@ function getOffresEmploi() {
   return $offres_emploi;
 }
 ?>
+<?php 
+function afficher_noms_champs_form() {
+    foreach ($_POST as $nom => $valeur) {
+        $nom_champ = htmlspecialchars($nom);
+        echo "$nom_champ = htmlspecialchars(\$_POST['$nom_champ']);<br>";
+    }
+}
+ ?>

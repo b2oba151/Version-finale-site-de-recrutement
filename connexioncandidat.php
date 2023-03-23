@@ -2,12 +2,9 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "base_de_donnee_site_recrutement";
+  require 'config_bd.php';
 
-    $bdd = new mysqli($servername, $username, $password, $dbname);
+  $bdd = new mysqli($host, $utilisateur, $mot_de_passe, $base_de_donnees);
 
     if (isset($_POST['submit'])) {
         if (!empty($_POST['email']) && !empty($_POST['password'])) {
@@ -22,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $row = $result->fetch_assoc();
                 $_SESSION['email'] = $email;
                 $_SESSION['password'] = $mdp;
-                $_SESSION['id'] = $row['id'];
+                $_SESSION['id'] = $row['id_candidat_ou_recruteur'];
                 $_SESSION['type'] = $row['type'];
                 if($row['type'] ==='recruteur') {
                     header('Location: home-recruteur.php');

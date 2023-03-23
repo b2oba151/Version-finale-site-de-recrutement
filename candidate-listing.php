@@ -1,4 +1,5 @@
-<?php require 'fonctions.php'?>
+<?php require 'fonctions.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
