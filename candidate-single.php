@@ -2,9 +2,17 @@
 session_start();require 'fonctions.php';
  $id=$_SESSION['id'] ;
 // //$id=2;
-//if($_POST['viewProfils']){
-  
-//}
+if(isset($_POST['idddd'])){
+   $idddd=$_POST['idddd'];
+   //$typee=$_POST['idddd'];
+   $userList=getUsersList();
+foreach($userList as $use){
+  if( $idddd==$use['id_candidat_ou_recruteur'] && $use['type']='candidat'){ 
+         $id=$idddd;
+         
+}
+}
+}
 
 ?>
 

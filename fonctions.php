@@ -9,7 +9,7 @@ function afficher_candidats_tous_les_candidats() {
         die("La connexion a échoué : " . mysqli_connect_error());
     }
 
-    $sql = "SELECT candidats.nom, candidats.prenom, cv.titre_profession, cv.type_travail, cv.ville FROM candidats JOIN cv ON candidats.id = cv.id_candidat";
+    $sql = "SELECT  candidats.id, candidats.nom, candidats.prenom, cv.titre_profession, cv.type_travail, cv.ville FROM candidats JOIN cv ON candidats.id = cv.id_candidat";
 
     $resultat = mysqli_query($connexion, $sql);
 
@@ -19,6 +19,7 @@ function afficher_candidats_tous_les_candidats() {
 
     while ($row = mysqli_fetch_assoc($resultat)) {
         $nom = $row['nom'];
+        $id = $row['id'];
         $prenom = $row['prenom'];
         $titre_profession = $row['titre_profession'];
         $type_travail = $row['type_travail'];
@@ -42,7 +43,10 @@ function afficher_candidats_tous_les_candidats() {
         echo "</div>";
         echo "</div>";
         echo "<div class='J-open'>";
-        echo "<button type='submit' name='viewProfils' class='theme-btn btn-style-one'>View Profile</button>";
+        echo "<form method='post' action='candidate-single.php' >";
+        echo "<input type='hidden' name='idddd'  value='$id' ></input>";
+        echo "<button type='submit'  value'' class='theme-btn btn-style-one'>View Profile</button>";
+        echo "</form>";
         echo "</div>";
         echo "</a>";
         echo "</li>";
@@ -697,4 +701,38 @@ function afficher_noms_champs_form() {
         echo "$nom_champ = htmlspecialchars(\$_POST['$nom_champ']);<br>";
     }
 }
+ ?>
+
+ <?php 
+ 
+ function getUsersList(){
+  require 'config_bd.php';
+
+    $conn = mysqli_connect($host, $utilisateur, $mot_de_passe, $base_de_donnees);
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
+  $sql = "SELECT * FROM utilisateurs";
+  $result = $conn->query($sql);
+
+  $usersList = array();
+  if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+          $user = array(
+              "id" => $row["id"],
+              "id_candidat_ou_recruteur" => $row["id_candidat_ou_recruteur"],
+              "email" => $row["email"],
+              "mot_de_passe" => $row["mot_de_passe"],
+              "type" => $row["type"]
+          );
+          array_push($usersList, $user);
+      }
+  }
+
+  $conn->close();
+  return $usersList;
+}
+
+ 
  ?>
