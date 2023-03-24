@@ -1,6 +1,6 @@
 <?php 
 session_start();require 'fonctions.php';
- $id=$_SESSION['id'] ;
+if(isset($_SESSION['id']) && $_SESSION['type']=='candidat' ) { $id=$_SESSION['id'] ;}
 // //$id=2;
 if(isset($_POST['idddd'])){
    $idddd=$_POST['idddd'];
@@ -105,8 +105,7 @@ foreach($userList as $use){
               <a href="#">Emplois</a>
               <ul class="dropdown">
                 <li><a href="job-listing.php">Liste des emplois</a></li>
-                <li><a href="job-detail.php">Détail de l'emploi</a></li>
-              </ul>
+                
             </li>
 
              

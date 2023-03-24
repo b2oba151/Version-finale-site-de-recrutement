@@ -91,8 +91,7 @@
               <ul class="dropdown">
                 <li><a href="job-listing.php">Liste des emplois</a></li>
                
-                <li><a href="job-detail.php">Détail de l'emploi</a></li>
-              </ul>
+                
             </li>
                 
 
@@ -208,12 +207,17 @@ exit();
       <li><span class="icon icon-filter"></span> <?php echo $data['categorie_travail'] ?> </li>
       <li><span class="icon icon-suitcase"></span> <?php echo $data['type_travail_cv'] ?> </li>
       <li><span class="icon icon-clock-o"></span> date limite : <?php echo $data['date_limite'] ?> </li>
+      
     </ul>
   </div>
 </div>
 <div class="d-flex">
   <div class="job-time mr-auto">
-   <span>Apply Job</span>
+  <form method='post' action='job-detail.php' >
+        <input type='hidden' name='idddd'  value='<?php echo $data['id'] ?>' ></input>
+        <button type='submit'  value'' class='theme-btn btn-style-one'><span>Apply Job</span></button>
+        </form>
+   
  </div>
  <div class="salary-bx">
    <span><?php echo $data['salaire'] ?></span>

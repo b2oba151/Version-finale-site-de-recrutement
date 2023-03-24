@@ -1,6 +1,26 @@
-<?php require 'fonctions.php';
+
+
+<?php 
+session_start(); 
+require 'fonctions.php';
+
 $id=6;
-$data=getRecruteursAndOffreInfo($id)?>
+// //$id=2;
+if(isset($_POST['idddd'])){
+   $idddd=$_POST['idddd'];
+   //$typee=$_POST['idddd'];
+   $offreList=getOffreList();
+foreach($offreList as $offre){
+  if( $idddd==$offre['id'] ){ 
+         $id=$idddd;
+         
+}
+}
+}
+$data=getRecruteursAndOffreInfo($id);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,26 +107,12 @@ $data=getRecruteursAndOffreInfo($id)?>
             </li>
 
             <li class="has-children">
-              <a href="#" class="active">Jobs</a>
+              <a href="#">Emplois</a>
               <ul class="dropdown">
-                <li><a href="job-listing.php">Job Listing</a></li>
-                <li><a href="job-grid.html">Job Grid</a></li>
-                <li><a href="job-grid.html">Job Grid Sidebar</a></li>
-                <li><a href="job-detail.php" class="active">Job Detail</a></li>
-              </ul>
-            </li>
-
-            <li class="has-children">
-              <a href="#">Pages</a>
-              <ul class="dropdown">
-                
+                <li><a href="job-listing.php">Liste des emplois</a></li>
                
-                <li><a href="index.php">Se connecter</a></li>
-                <li><a href="inscription-recruteur.php">S'inscrire</a></li>
-            
-              </ul>
+                
             </li>
-
             
 
          </ul>
@@ -116,7 +122,7 @@ $data=getRecruteursAndOffreInfo($id)?>
        <div class="ml-auto">
                 
 <?php
-session_start(); 
+
 
 if(isset($_SESSION['id'])) { 
 

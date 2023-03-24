@@ -736,3 +736,38 @@ function afficher_noms_champs_form() {
 
  
  ?>
+
+
+<?php 
+ 
+ function getOffreList(){
+  require 'config_bd.php';
+
+    $conn = mysqli_connect($host, $utilisateur, $mot_de_passe, $base_de_donnees);
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
+  $sql = "SELECT * FROM offres_emploi ";
+  $result = $conn->query($sql);
+
+  $usersList = array();
+  if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+          $user = array(
+              "id" => $row["id"],
+              "id_recruteur" => $row["id_recruteur"],
+              "titre" => $row["titre"],
+              "description" => $row["description"],
+              "email_recruteur" => $row["email_recruteur"]
+          );
+          array_push($usersList, $user);
+      }
+  }
+
+  $conn->close();
+  return $usersList;
+}
+
+ 
+ ?>

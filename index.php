@@ -89,8 +89,7 @@ session_start();
               <ul class="dropdown">
                 <li><a href="job-listing.php">Liste des emplois</a></li>
                
-                <li><a href="job-detail.php">Détail de l'emploi</a></li>
-              </ul>
+                
             </li>
 
             </nav>
