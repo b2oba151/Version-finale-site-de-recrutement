@@ -35,7 +35,40 @@ SELECT c.id,c.nom, c.prenom, GROUP_CONCAT(co.titre SEPARATOR ', ') AS competence
                         AND o.categorie_travail = 'Gestion de projet'
                         GROUP BY c.id
                         ORDER BY nb_competences asc;
-}
+
 ```
            
-       
+
+### <p align="center">les experiences du candidat avec id=1</p>
+  
+####🧑🏻‍💻 Requete
+```sql
+SELECT nom_societe, poste, nom_employeur, description_bref, date_debut, date_fin 
+FROM experiances 
+INNER JOIN cv ON experiances.id_cv = cv.id 
+INNER JOIN candidats ON cv.id_candidat = candidats.id 
+WHERE candidats.id = 1 
+ORDER BY date_fin DESC;
+```
+
+
+### <p align="center">les formations du candidat avec id=1</p>
+  
+  
+####🧑🏻‍💻 Requete
+```sql
+SELECT formations.nom_etablissement, formations.description_bref, formations.diplome, formations.date_debut, formations.date_fin
+FROM candidats
+JOIN cv ON candidats.id = cv.id_candidat
+JOIN formations ON cv.id = formations.id_cv
+WHERE candidats.id = 1
+ORDER BY formations.date_fin desc;
+
+```
+
+
+
+
+
+
+         

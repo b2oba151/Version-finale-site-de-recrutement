@@ -278,7 +278,7 @@ AND cv.sexe = 'Homme';
 
 
 
-----------------les experience de candidat
+----------------les experiences du candidat avec id=1
 SELECT nom_societe, poste, nom_employeur, description_bref, date_debut, date_fin 
 FROM experiances 
 INNER JOIN cv ON experiances.id_cv = cv.id 
@@ -287,7 +287,7 @@ WHERE candidats.id = 1
 ORDER BY date_fin DESC;
 
 
-----------------les experience de candidat
+----------------les formations du candidat avec id=1
 SELECT formations.nom_etablissement, formations.description_bref, formations.diplome, formations.date_debut, formations.date_fin
 FROM candidats
 JOIN cv ON candidats.id = cv.id_candidat
@@ -316,7 +316,7 @@ ORDER BY formations.date_fin desc;
                 GROUP BY recruteurs.id;
 
 
----------------------emploi poster par un candidat
+---------------------emploi poster par un recruteur
    SELECT recruteurs.id, COUNT(offres_emploi.id) AS nombre_offres, offres_emploi.*, COUNT(DISTINCT postulations.id_candidat) AS nombre_postulations 
 FROM recruteurs 
 LEFT JOIN offres_emploi ON recruteurs.id = offres_emploi.id_recruteur 
