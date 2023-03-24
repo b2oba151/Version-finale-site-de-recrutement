@@ -1,8 +1,65 @@
 
+ ---affichage de la liste des candidats avec leurs competances et l'id_offre auquel ils on postuler :
+
+                        SELECT c.id,c.nom, c.prenom, GROUP_CONCAT(co.titre SEPARATOR ', ') AS competences, p.id AS id_offre, o.categorie_travail 
+                        FROM candidats c 
+                        INNER JOIN postulations p ON c.id = p.id_candidat 
+                        INNER JOIN offres_emploi o ON p.id_offre = o.id 
+                        INNER JOIN offres_emploi_competences oc ON o.id = oc.id_offre 
+                        INNER JOIN competences co ON oc.id_competence = co.id 
+                        GROUP BY c.id;
 
 
 
----------------------------------liaison de tousles tables entre eux
+--  Requette du score des candidats(cas: recuperer les candiats avec comme competances 'Programmation Python', 'Gestion de Projet' et 'Gestion de projet' comme titre du poste)
+
+                        SELECT c.id, c.nom, c.prenom, cv.titre_profession, cv.description, cv.fichier_cv, cv.ville, cv.sexe, cv.type_travail, cv.experience, GROUP_CONCAT(co.titre SEPARATOR ', ') AS competences, COUNT(DISTINCT co.id) AS nb_competences, p.id AS id_offre, o.categorie_travail
+                        FROM candidats c
+                        INNER JOIN postulations p ON c.id = p.id_candidat
+                        INNER JOIN offres_emploi o ON p.id_offre = o.id
+                        INNER JOIN offres_emploi_competences oc ON o.id = oc.id_offre
+                        INNER JOIN competences co ON oc.id_competence = co.id
+                        INNER JOIN cv ON c.id = cv.id_candidat
+                        WHERE co.titre IN ('Programmation Python', 'Gestion de Projet')
+                        AND o.categorie_travail = 'Gestion de projet'
+                        GROUP BY c.id
+                        ORDER BY nb_competences asc;
+
+
+   --recupere la liste de tous les candidat(nom,prenom) avec les id_offre_emploi  champ => candidats et postulations
+                    SELECT postulations.id_offre,candidats.nom, candidats.prenom 
+                    FROM candidats
+                    INNER JOIN postulations ON candidats.id = postulations.id_candidat ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------liaison de tous les tables entre eux
 SELECT *
 FROM profils
 JOIN utilisateurs ON profils.id = utilisateurs.profil_id
@@ -22,7 +79,7 @@ LEFT JOIN experiances ON experiances.id_cv = cv.id;
 
 
 
--------------------------------recuperation des utilisateurs
+-------------------------------recuperation des infos  utilisateurs
 SELECT utilisateurs.email, utilisateurs.mot_de_passe, utilisateurs.type, candidats.nom, candidats.prenom, recruteurs.nom_entreprise, recruteurs.adresse
 FROM utilisateurs
 LEFT JOIN candidats ON utilisateurs.id_candidat_ou_recruteur = candidats.id AND utilisateurs.type = 'candidat'
