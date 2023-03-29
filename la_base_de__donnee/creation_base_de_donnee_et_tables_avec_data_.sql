@@ -26,6 +26,7 @@ USE `base_de_donnee_site_recrutement` ;
 -- Structure de la table `candidats`
 --
 
+
 CREATE TABLE `candidats` (
   `id` int(10) UNSIGNED NOT NULL,
   `nom` varchar(255) NOT NULL,
@@ -169,13 +170,13 @@ CREATE TABLE `experiances` (
 --
 
 INSERT INTO `experiances` (`id`, `id_cv`, `nom_societe`, `poste`, `nom_employeur`, `description_bref`, `date_debut`, `date_fin`) VALUES
-(11, 1, 'ACME Corp', 'Développeur web', 'ADMIN Doe', 'Travaillé sur le développement de sites web pour des clients', '2018-01-01', '2019-12-31'),
+(11, 1, 'ACME Corp', 'Développeur web', 'John Doe', 'Travaillé sur le développement de sites web pour des clients', '2018-01-01', '2019-12-31'),
 (12, 1, 'XYZ Inc', 'Développeur logiciel', 'Jane Doe', 'Développé des applications logicielles pour les clients internes', '2020-01-01', '2022-02-28'),
 (13, 2, 'Big Data Co', 'Ingénieur Big Data', 'Bob Smith', 'Responsable du développement de solutions Big Data pour les clients', '2017-05-01', '2019-08-31'),
 (14, 2, 'Cloud Solutions', 'Architecte Cloud', 'Alice Brown', 'Responsable de la conception de l\'architecture de cloud computing pour les clients', '2019-09-01', '2021-11-30'),
 (15, 3, 'Startup ABC', 'Chef de projet', 'Tom Jones', 'Géré des projets de développement de logiciels pour les clients de la startup', '2020-01-15', '2022-03-15'),
 (16, 3, 'Consulting Group', 'Consultant en stratégie', 'Emily Davis', 'Conseillé les clients sur leur stratégie de développement commercial', '2018-06-01', '2020-01-14'),
-(17, 4, 'E-commerce Inc', 'Chef de produit', 'Alex ADMINson', 'Responsable du développement de nouveaux produits pour la plateforme e-commerce', '2019-03-01', '2021-05-31'),
+(17, 4, 'E-commerce Inc', 'Chef de produit', 'Alex Johnson', 'Responsable du développement de nouveaux produits pour la plateforme e-commerce', '2019-03-01', '2021-05-31'),
 (18, 4, 'Marketing Solutions', 'Spécialiste en marketing digital', 'Sarah Wilson', 'Conçu et mis en œuvre des campagnes de marketing numérique pour les clients', '2021-06-01', '2022-12-31'),
 (19, 5, 'Banking Co', 'Analyste de données', 'David Lee', 'Effectué des analyses de données pour identifier les tendances du marché financier', '2020-03-01', '2021-12-31'),
 (20, 5, 'Insurance Corp', 'Actuaire', 'Amy Chen', 'Effectué des analyses actuarielles pour évaluer les risques pour les clients de la compagnie d\'assurance', '2018-01-01', '2020-02-29');
@@ -340,7 +341,11 @@ INSERT INTO `profils` (`id`, `nom`, `description`) VALUES
 (7, 'RH', 'Personne ayant des compétences pour gérer les ressources humaines d\'une entreprise'),
 (8, 'Juriste', 'Personne ayant des compétences en droit pour conseiller une entreprise'),
 (9, 'Consultant', 'Personne ayant des compétences pour conseiller une entreprise'),
-(10, 'Formateur', 'Personne ayant des compétences pour former des personnes dans différents domaines');
+(10, 'Formateur', 'Personne ayant des compétences pour former des personnes dans différents domaines'),
+(11, '', NULL),
+(12, '', NULL),
+(13, '', NULL),
+(14, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -405,7 +410,8 @@ INSERT INTO `utilisateurs` (`id`, `email`, `mot_de_passe`, `profil_id`, `type`, 
 (17, 'utilisateur7@gmail.com', '222222', 1, 'candidat', 7),
 (18, 'utilisateur8@gmail.com', '333333', 2, 'recruteur', 8),
 (19, 'utilisateur9@gmail.com', '444444', 1, 'candidat', 9),
-(20, 'utilisateur10@gmail.com', '555555', 2, 'recruteur', 10);
+(20, 'utilisateur10@gmail.com', '555555', 2, 'recruteur', 10),
+(21, 'admin@admin.adm', 'admin', 1, 'admin', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -559,7 +565,7 @@ ALTER TABLE `postulations`
 -- AUTO_INCREMENT pour la table `profils`
 --
 ALTER TABLE `profils`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `recruteurs`
@@ -571,7 +577,7 @@ ALTER TABLE `recruteurs`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Contraintes pour les tables déchargées
