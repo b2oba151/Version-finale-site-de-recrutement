@@ -237,7 +237,6 @@ function getFormationsByIdCandidat($idCandidat) {
     mysqli_close($conn);
     return $formations;
   }
-
 ?>
 
 
@@ -270,12 +269,9 @@ function getOffresEmploiRecruteurs() {
       }
     } else {
     }
-  
     $conn->close();
-  
     return $offres;
   }
-  
 ?>
 
 
@@ -771,3 +767,57 @@ function afficher_noms_champs_form() {
 
  
  ?>
+
+
+
+<?php
+function afficher_candidats_tous_les_candidatsDash() {
+  require 'config_bd.php';
+
+    $connexion = mysqli_connect($host, $utilisateur, $mot_de_passe, $base_de_donnees);
+
+    if (!$connexion) {
+        die("La connexion a échoué : " . mysqli_connect_error());
+    }
+
+    $sql = "SELECT  candidats.id, candidats.nom, candidats.prenom, cv.titre_profession, cv.type_travail, cv.ville FROM candidats JOIN cv ON candidats.id = cv.id_candidat";
+
+    $resultat = mysqli_query($connexion, $sql);
+
+    if (!$resultat) {
+        die("La requête a échoué : " . mysqli_error($connexion));
+    }
+
+    while ($row = mysqli_fetch_assoc($resultat)) {
+        $nom = $row['nom'];
+        $id = $row['id'];
+        $prenom = $row['prenom'];
+        $titre_profession = $row['titre_profession'];
+        $type_travail = $row['type_travail'];
+        $ville = $row['ville'];
+
+        echo '<tr>';
+        echo '<td>';
+          echo '<div class="job-post-company ml-3">';
+            echo '<img src="../images/resource/person_1.jpg" class="img-fluid" alt="user-7">';
+          echo '</div>';
+        echo '</td>';
+        echo '<td>';
+          echo '<p class="d-block"><strong> '.$titre_profession.'</strong>';
+          echo '  <span class="d-block"> <i class="icon icon-map-marker mr-2"></i> '.$ville.'</span></p>';
+          echo ' </td>';
+          echo ' <td>';
+          echo '  <p>';
+          echo '  <span class="d-block"> <i class="icon icon-briefcase mr-2"></i>  '.$type_travail.' </span></p>';
+          echo ' </td>';
+          echo '  <td class="text-info">  ';
+          echo ' <a href="javascript:void(0)" class="mr-2"><i class="icon icon-eye"></i></a>';
+          echo '  <a href="javascript:void(0)" class="mr-2"><i class="icon icon-pencil"></i></a>';
+          echo '  <a href="javascript:void(0)"><i class="icon icon-trash"></i></a>';
+          echo ' </td>';
+          echo ' </tr>';
+    }
+
+    mysqli_close($connexion);
+}
+?>

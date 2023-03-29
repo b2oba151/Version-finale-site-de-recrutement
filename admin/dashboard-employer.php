@@ -42,11 +42,11 @@
 				<div class="upper-right">
 					<ul class="clearfix">
 						<li class="dropdown option-box">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="images/resource/thumb-1.jpg" alt="avatar" class="thumb">Welcom, John</a>
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img src="images/resource/thumb-1.jpg" alt="avatar" class="thumb">Welcom, ADMIN</a>
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="dashboard-employer.php">Dashboard</a>
 								<a class="dropdown-item" href="dashboard-employer-my-profile.html">My profile</a>
-								<a class="dropdown-item" href="../index-2.html">Log out</a>
+								<a class="dropdown-item" href="../index.php">Log out</a>
 							</div>
 						</li>
 						
@@ -67,10 +67,10 @@
 				<ul class="navigation">
 					<li class="active"><a href="dashboard-employer.php"><i class="pe-7s-culture"></i> Dashboard</a></li>
 					<li><a href="dashboard-employer-my-profile.html"><i class="pe-7s-user"></i>My Profile</a></li>
-					<li><a href="dashboard-employer-manage-Candidats.html"><i class="pe-7s-note2"></i>Manage Candidats</a></li>
+					<li><a href="dashboard-employer-manage-candidates.php"><i class="pe-7s-note2"></i>Manage Candidats</a></li>
 					<li><a href="dashboard-employer-manage-jobs.html"><i class="pe-7s-note2"></i>Manage Jobs</a></li>
-					<li><a href="dashboard-employer-post-job.php"><i class="pe-7s-up-arrow"></i>Post a Job</a></li>
-					<li><a href="../index-2.html"><i class="pe-7s-back-2"></i>Logout</a></li>
+					
+					<li><a href="../index.php"><i class="pe-7s-back-2"></i>Logout</a></li>
 				</ul>
 			</div>
 		</section>
@@ -88,7 +88,7 @@
 								<div class="col-lg-6 col-md-6">
 									<div class="breadcrumb-nav">
 										<ul>
-											<li><a href="../index-2.html">Index</a></li>
+											<li><a href="../index.php">Index</a></li>
 											<li class="active">Dashboard</li>
 										</ul>
 									</div>
@@ -97,66 +97,9 @@
 							</div>
 						</div>
 
-						<div class="row">
-							<div class="col-lg-3 col-md-6 col-sm-6">
-								<div class="ui-item bg-success">
-									<div class="left">
-										<h4>24</h4>
-										<p>Total Job Posted</p>
-									</div>
-									<div class="right">
-										<i class="la la-cloud-upload"></i>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-6 col-sm-6">
-								<div class="ui-item bg-warning">
-									<div class="left">
-										<h4>122</h4>
-										<p>Application Submit</p>
-									</div>
-									<div class="right">
-										<i class="la la-file-text-o"></i>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-6 col-sm-6">
-								<div class="ui-item bg-active">
-									<div class="left">
-										<h4>786</h4>
-										<p>This Month Views</p>
-									</div>
-									<div class="right">
-										<i class="la la-eye"></i>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-6 col-sm-6">
-								<div class="ui-item bg-dark">
-									<div class="left">
-										<h4>12</h4>
-										<p>Call for interview</p>
-									</div>
-									<div class="right">
-										<i class="la la-phone"></i>
-									</div>
-								</div>
-							</div>
-						</div>
 
 						<!-- begin row -->
-						<div class="row">
 
-							<div class="col-lg-12">
-								<div class="card card-statistics">
-									<div class="card-body">
-										<div class="apexchart-wrapper">
-											<div id="jobsetchart"></div>
-										</div>
-									</div>
-								</div>
-							</div>                                  
-						</div>
 						<!-- end row -->
 
 						<!-- Start Jobs Area -->
@@ -251,7 +194,7 @@ function getOffresEmploi() {
 
 <?php foreach($datas as $data) :?>
  <li>
-  <a href="job-detail.php">
+  <a href="../job-detail.php">
    <div class="job-resp m-b30">
     <div class="job-post-company">
      <span><img src="images/logo/icon2.png"/></span>

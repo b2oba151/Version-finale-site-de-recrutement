@@ -1,7 +1,9 @@
 # Hi 👋
 # <p align="center">Projet de Module</p>
   
-
+* admin: email ->admin@admin.adm | motdepasse ->admin;
+* un compte recruteur:utilisateur2@gmail.com | motdepasse -> abcdef
+* un compte candidat:utilisateur1@gmail.com | motdepasse -> 123456
 
 * [lien pour visualiser la base de donnée](https://dbdiagram.io/d/6414f7c7296d97641d88e00f)
 * les fichier de la base de donnee se trouve dans le dossier: *la_base_de__donnee*

@@ -77,11 +77,21 @@ session_start();
                       <a href="candidate-listing.php">Listes des Candidats</a>
                     </li>
                     <li>
-                      <a href="post-candidat.php">Ajouter Candidat</a>
-                    </li>
+                    <?php
+                              if ($_SESSION['type'] == 'candidat') {
+                                // Afficher la partie du code
+                              ?>
+                                    <li><a href="post-candidat.php">Ajouter Candidat</a> 
+                                  </li>
                     <li>
                       <a href="candidate-single.php">Candidate Detail</a>
                     </li>
+                                    <?php
+                              } else {
+                              
+                              } ?>
+                      
+                   
                   </ul>
                 </li>
                            <li class="has-children">
@@ -229,7 +239,7 @@ session_start();
                   Your resume in minutes with Jobset resume assistant is ready!
                 </p>
                 <p>
-                  <a href="admin/dashboard-employer.php" class="theme-btn btn-style-four"
+                  <a href="connexioncandidat.php" class="theme-btn btn-style-four"
                     >page admin</a
                   >
                 </p>

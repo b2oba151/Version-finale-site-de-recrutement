@@ -86,8 +86,18 @@ foreach($userList as $use){
                 <ul class="dropdown">
                  <li><a href="employer-listing.php">Liste des Recruteurs</a></li>
                  <li><a href="employer-detail.php">Details du Recruteurs</a></li>
-                 <li><a href="post-job.php">Publier un emploi</a></li>
-                 <li><a href="admin/dashboard-employer.php">Dashboard</a></li>
+                 <?php
+                              if ($_SESSION['type'] == 'recruteur') {
+                                // Afficher la partie du code
+                              ?>
+                                   <li><a href="post-job.php">Publier un emploi</a></li>
+                                   <li><a href="admin/dashboard-employer.php">Dashboard</a></li>
+                                    <?php
+                              } else {
+                              
+                              } ?>
+                 
+                 
                </ul>
              </li>
 
@@ -258,7 +268,7 @@ foreach($userList as $use){
               <!-- Upper column -->
               <div class="upper-column col-lg-3 col-md-12 col-sm-12">
                 <div class="footer-logo">
-                  <figure class="image"><a href="index-3.php"><img src="images/" class="img-responsive" alt="Logo Image"></a></figure>
+                  <figure class="image"><a href="index.php"><img src="images/" class="img-responsive" alt="Logo Image"></a></figure>
                 </div>
               </div>
 

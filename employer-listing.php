@@ -137,7 +137,7 @@
       <div class="row">
 
 
-       <div class="col-lg-9 mb-4">
+       <div class="col-lg-10 mb-4">
        <ul class="post-job-bx">
 
 
@@ -173,62 +173,9 @@
 </div>
 
 
-<div class="col-lg-3 job-sidebar">
+<div class="col-lg-2 job-sidebar">
 
-  <form action="#" class="search-form mb-3">
-    <div class="form-group">
-      <span class="icon icon-search"></span>
-      <input type="text" class="form-control" placeholder="Search...">
-    </div>
-  </form>
-  <div class="sidebar-box bg-white p-4 ftco-animate">
-    <h3 class="heading-sidebar">Specialism</h3>
-    <form action="#" class="browse-form">
 
-      <label for="option-job-1"><input type="checkbox" id="option-job-1" name="vehicle" value="" checked> IT Contractor</label><br>
-      <label for="option-job-2"><input type="checkbox" id="option-job-2" name="vehicle" value=""> Charity &amp; Voluntary</label><br>
-      <label for="option-job-3"><input type="checkbox" id="option-job-3" name="vehicle" value=""> Digital &amp; Creative</label><br>
-      <label for="option-job-4"><input type="checkbox" id="option-job-4" name="vehicle" value=""> Accounting &amp; Finance</label><br>
-      <label for="option-job-5"><input type="checkbox" id="option-job-5" name="vehicle" value=""> Estate Agency</label><br>
-      <label for="option-job-6"><input type="checkbox" id="option-job-6" name="vehicle" value=""> Health &amp; Hospital</label><br>
-    </form>
-  </div>
-
-  <div class="sidebar-box bg-white p-4 ftco-animate">
-    <h3 class="heading-sidebar">Experience</h3>
-    <form action="#" class="browse-form">
-
-      <label for="option-job-1"><input type="checkbox" id="option-job-1" name="vehicle" value="" checked> Fresher</label><br>
-      <label for="option-job-2"><input type="checkbox" id="option-job-2" name="vehicle" value=""> Less than 1 Year</label><br>
-      <label for="option-job-3"><input type="checkbox" id="option-job-3" name="vehicle" value=""> 2 Years</label><br>
-      <label for="option-job-4"><input type="checkbox" id="option-job-4" name="vehicle" value=""> 3 Years</label><br>
-      <label for="option-job-5"><input type="checkbox" id="option-job-5" name="vehicle" value=""> 4 Years</label><br>
-    </form>
-  </div>
-
-  <div class="sidebar-box bg-white p-4 ftco-animate">
-    <h3 class="heading-sidebar">Offered Salary</h3>
-
-    <form action="#" class="browse-form">
-      <label for="option-location-1"><input type="checkbox" id="option-location-1" name="vehicle" value="" checked> 10k - 20k</label><br>
-      <label for="option-location-2"><input type="checkbox" id="option-location-2" name="vehicle" value=""> 20k - 30k</label><br>
-      <label for="option-location-3"><input type="checkbox" id="option-location-3" name="vehicle" value=""> 30k - 40k</label><br>
-      <label for="option-location-4"><input type="checkbox" id="option-location-4" name="vehicle" value=""> 40k - 50k</label><br>
-      <label for="option-location-5"><input type="checkbox" id="option-location-5" name="vehicle" value=""> 50k - 60k</label><br>
-    </form>
-  </div>
-
-  <div class="sidebar-box bg-white p-4 ftco-animate">
-    <h3 class="heading-sidebar">Job Type</h3>
-    <form action="#" class="browse-form">
-      <label for="option-job-type-1"><input type="checkbox" id="option-job-type-1" name="vehicle" value="" checked> Partime</label><br>
-      <label for="option-job-type-2"><input type="checkbox" id="option-job-type-2" name="vehicle" value=""> Fulltime</label><br>
-      <label for="option-job-type-3"><input type="checkbox" id="option-job-type-3" name="vehicle" value=""> Internship</label><br>
-      <label for="option-job-type-4"><input type="checkbox" id="option-job-type-4" name="vehicle" value=""> Temporary</label><br>
-      <label for="option-job-type-5"><input type="checkbox" id="option-job-type-5" name="vehicle" value=""> Freelance</label><br>
-      <label for="option-job-type-6"><input type="checkbox" id="option-job-type-6" name="vehicle" value=""> Fixed</label><br>
-    </form>
-  </div>
 </div>
 
 
@@ -255,7 +202,7 @@
         <!-- Upper column -->
         <div class="upper-column col-lg-3 col-md-12 col-sm-12">
           <div class="footer-logo">
-            <figure class="image"><a href="index-3.php"><img src="images/" class="img-responsive" alt="Logo Image"></a></figure>
+            <figure class="image"><a href="index.php"><img src="images/" class="img-responsive" alt="Logo Image"></a></figure>
           </div>
         </div>
 

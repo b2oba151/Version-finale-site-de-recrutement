@@ -27,7 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 } elseif($row['type'] ==='candidat') {
                     header('Location: index.php');
                     exit;
-                }
+                }elseif($row['type'] ==='admin') {
+                  header('Location: admin/dashboard-employer.php');
+                  exit;}
                 
             } else {
                 $err= "Votre adresse e-mail ou votre mot de passe est incorrect.";

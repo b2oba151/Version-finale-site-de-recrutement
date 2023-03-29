@@ -319,7 +319,7 @@ $id=2?>
         <!-- Upper column -->
         <div class="upper-column col-lg-3 col-md-12 col-sm-12">
           <div class="footer-logo">
-            <figure class="image"><a href="index-3.php"><img src="images/" class="img-responsive" alt="Logo Image"></a></figure>
+            <figure class="image"><a href="index.php"><img src="images/" class="img-responsive" alt="Logo Image"></a></figure>
           </div>
         </div>
 
